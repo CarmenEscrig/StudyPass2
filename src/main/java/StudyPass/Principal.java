@@ -28,6 +28,7 @@ public class Principal extends JFrame {
         panel_1.add(titulo);
         panel_2.add(estudiar);
         panel_3.add(tarjeta);
+        panel_3.add(Box.createHorizontalStrut(350));
         panel_3.add(progreso);
         panel_1.setBackground(Color.black);
         panel_2.setBackground(Color.black);
