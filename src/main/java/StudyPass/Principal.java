@@ -1,6 +1,7 @@
 package StudyPass;
 
 import javax.swing.*;
+import javax.xml.stream.events.StartDocument;
 import java.awt.*;
 
 public class Principal extends JFrame {
@@ -20,11 +21,16 @@ public class Principal extends JFrame {
         panel.add(panel_1);
         panel.add(panel_2);
         panel.add(panel_3);
-        setSize(350, 250);
+        setSize(1960, 1080);
         setTitle("StudyPass");
-        tarjeta.setPreferredSize(new Dimension(500,250));
-        estudiar.setPreferredSize(new Dimension(450,350));
+        titulo.setFont(new Font("Courier New", Font.BOLD, 80));
+        tarjeta.setPreferredSize(new Dimension(450,250));
+        tarjeta.setFont(new Font("Courier New",Font.ITALIC,40));
+        estudiar.setPreferredSize(new Dimension(1265,350));
+        estudiar.setFont(new Font("Courier New",Font.ITALIC,40));
         progreso.setPreferredSize(new Dimension(450,250));
+        progreso.setFont(new Font("Courier New", Font.ITALIC, 40));
+        panel_1.add(Box.createVerticalStrut(150));
         panel_1.add(titulo);
         panel_2.add(estudiar);
         panel_3.add(tarjeta);
