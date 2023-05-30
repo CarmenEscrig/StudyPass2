@@ -12,4 +12,11 @@ public class FlashCard {
         this.answer = answer;
         this.subject = subject;
     }
+
+    public FlashCard(long id, String question, String answer, Subject subject) {
+        this.id = id;
+        this.question = question;
+        this.answer = answer;
+        this.subject = subject;
+    }
 }
