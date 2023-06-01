@@ -1,7 +1,6 @@
 package StudyPass;
 
 import javax.swing.*;
-import javax.xml.stream.events.StartDocument;
 import java.awt.*;
 
 public class Principal extends JFrame {
