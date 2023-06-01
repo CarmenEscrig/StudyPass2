@@ -19,6 +19,7 @@ public class User {
         this.subjects = new ArrayList<>();
     }
 
+
     public User(int id, String username, String password, String type, Progress progress, ArrayList<Subject> subjects) {
         this.id = id;
         this.username = username;
