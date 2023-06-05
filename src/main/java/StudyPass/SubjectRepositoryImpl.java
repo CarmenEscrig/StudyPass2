@@ -16,6 +16,10 @@ public class SubjectRepositoryImpl implements IRepository<Subject> {
         return null;
     }
 
+    public Subject findByUser() {
+        return null;
+    }
+
     @Override
     public void save(Subject entity) throws SQLException {
 

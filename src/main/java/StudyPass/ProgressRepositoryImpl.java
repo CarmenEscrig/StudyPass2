@@ -28,6 +28,10 @@ public class ProgressRepositoryImpl implements IRepository<Progress> {
         return progresses;
     }
 
+    public Progress findByUser() {
+        return null;
+    }
+
     @Override
     public void save(Progress progress) throws SQLException {
         if (progress.getId() == -1){
