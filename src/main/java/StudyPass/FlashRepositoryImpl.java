@@ -81,8 +81,9 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
     public FlashCard bdToEntity(ResultSet rs) throws SQLException {
         FlashCard flashCard = getFlashCardCached(rs.getInt("id"));
         if (flashCard == null) {
-            flashCard = new FlashCard(rs.getInt("id"), rs.getString("question"), rs.getString("answer"), new SubjectRepositoryImpl().findByFlashCard(flashCard));
+            flashCard = new FlashCard(rs.getInt("id"), rs.getString("question"), rs.getString("answer"));
             flashCardsCached.add(flashCard);
+            flashCard.setSubject(new SubjectRepositoryImpl().findByFlashCard(flashCard));
         }
         return flashCard;
     }

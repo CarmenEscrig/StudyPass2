@@ -17,19 +17,25 @@ public class ProgressRepositoryImpl implements IRepository<Progress> {
     public List<Progress> findAll() throws SQLException {
         List<Progress> progresses = new ArrayList<>();
         Statement st = this.con.createStatement();
-        //Ejecutar la consulta, guardando los datos devueltos en un Resulset
         ResultSet rs = st.executeQuery("SELECT * FROM progress");
 
         while(rs.next()){
             Progress p =  bdToEntity(rs);
-            //Añadir el User al conjunto de users
             progresses.add(p);
         }
         return progresses;
     }
 
-    public Progress findByUser() {
-        return null;
+    public Progress findByUser(User user) throws SQLException{
+        PreparedStatement st = con.prepareStatement("SELECT * FROM users WHERE id = ? ");
+        st.setInt(1, user.getId());
+
+        ResultSet rs = st.executeQuery();
+        Progress p = null;
+        if (rs.next()){
+            p = bdToEntity(rs);
+        }
+        return p;
     }
 
     @Override
