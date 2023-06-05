@@ -13,5 +13,6 @@ public class MainPrueba {
             System.out.println(user1.getUsername());
         }
         userRepository.delete(user);
+
     }
 }
