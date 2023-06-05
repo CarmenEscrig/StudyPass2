@@ -27,7 +27,7 @@ public class ProgressRepositoryImpl implements IRepository<Progress> {
     }
 
     public Progress findByUser(User user) throws SQLException{
-        PreparedStatement st = con.prepareStatement("SELECT * FROM users WHERE id = ? ");
+        PreparedStatement st = con.prepareStatement("SELECT * FROM progress WHERE id = ? ");
         st.setInt(1, user.getId());
 
         ResultSet rs = st.executeQuery();
