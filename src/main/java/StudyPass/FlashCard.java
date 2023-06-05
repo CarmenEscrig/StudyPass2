@@ -6,6 +6,18 @@ public class FlashCard {
     private String answer;
     private Subject subject;
 
+    public FlashCard() {
+        this.id = -1;
+        this.question = "";
+        this.answer = "";
+    }
+
+    public FlashCard(int id, String question, String answer) {
+        this.id = id;
+        this.question = question;
+        this.answer = answer;
+    }
+
     public FlashCard(String question, String answer, Subject subject) {
         this.question = question;
         this.answer = answer;

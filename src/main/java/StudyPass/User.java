@@ -20,13 +20,11 @@ public class User {
     }
 
 
-    public User(int id, String username, String password, String type, Progress progress, ArrayList<Subject> subjects) {
+    public User(int id, String username, String password, String type) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.type = type;
-        this.progress = progress;
-        this.subjects = subjects;
     }
 
     public User(int id, String username, String password, String type, Progress progress) {

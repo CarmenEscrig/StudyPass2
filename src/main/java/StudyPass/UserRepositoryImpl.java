@@ -26,9 +26,9 @@ public class UserRepositoryImpl implements IRepository<User>{
     public User bdToEntity(ResultSet rs) throws SQLException {
         User user = getUserCached(rs.getInt("id"));
         if (user == null) {
-            user = new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getString("type"), new ProgressRepositoryImpl().findByUser());
+            user = new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getString("type"));
             usersCached.add(user);
-
+            user.setProgress(new ProgressRepositoryImpl().findByUser(user));
         }
         return user;
     }
@@ -89,6 +89,4 @@ public class UserRepositoryImpl implements IRepository<User>{
         st.executeUpdate();
         st.close();
     }
-
-
 }
