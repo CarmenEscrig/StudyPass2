@@ -15,6 +15,11 @@ public class Subject {
         this.flashCards = new ArrayList<>();
     }
 
+    public Subject(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }

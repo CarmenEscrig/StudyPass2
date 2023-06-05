@@ -25,6 +25,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.type = type;
+        this.progress = new Progress();
     }
 
     public User(int id, String username, String password, String type, Progress progress) {
