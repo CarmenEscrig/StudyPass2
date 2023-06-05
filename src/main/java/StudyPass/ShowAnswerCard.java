@@ -50,7 +50,7 @@ public class ShowAnswerCard extends JFrame{
         panel.add(panel_2);
         panel.add(panel_3);
         panel.add(panel_4);
-        setSize(700, 600);
+        setSize(700, 850);
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 40));
         btnCorrect.setPreferredSize(new Dimension(150,40));
