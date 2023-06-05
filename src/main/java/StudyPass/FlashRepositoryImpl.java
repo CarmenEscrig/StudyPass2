@@ -87,4 +87,16 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
         }
         return flashCard;
     }
+
+    public ArrayList<FlashCard> findBySubject(Subject subject) throws SQLException {
+        List<FlashCard> flashCards = new ArrayList<>();
+        PreparedStatement st = con.prepareStatement("SELECT * FROM flashcards where subjectid = ?");
+        ResultSet rs = st.executeQuery();
+
+        while(rs.next()){
+            FlashCard s =  bdToEntity(rs);
+            flashCards.add(s);
+        }
+        return flashCards;
+    }
 }
