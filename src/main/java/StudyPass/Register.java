@@ -51,6 +51,7 @@ public class Register extends JFrame{
     final JPanel panel_4 = new JPanel();
     final JPanel panel_5 = new JPanel();
     final JPanel panel_6 = new JPanel();
+    final JPanel panel_7 = new JPanel();
 
 
 
@@ -64,28 +65,38 @@ public class Register extends JFrame{
         panel.add(panel_4);
         panel.add(panel_5);
         panel.add(panel_6);
+        panel.add(panel_7);
 
-        setSize(700, 600);
+        setSize(700, 1000);
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 40));
-        lblAsignatura.setPreferredSize(new Dimension(250,50));
-        btnAsignatura_2.setPreferredSize(new Dimension(250,50));
+        lblAsignatura.setPreferredSize(new Dimension(210,50));
+        btnAsignatura_1.setPreferredSize(new Dimension(150,50));
+        btnAsignatura_2.setPreferredSize(new Dimension(150,50));
+        btnAsignatura_3.setPreferredSize(new Dimension(150,50));
+        btnAsignatura_4.setPreferredSize(new Dimension(150,50));
+        btnAsignatura_5.setPreferredSize(new Dimension(150,50));
+        btnAsignatura_6.setPreferredSize(new Dimension(150,50));
         panel_1.add(Box.createVerticalStrut(30));
         panel_1.add(titulo);
-        panel_5.add(lblAsignatura);
-        panel_2.add(lblNombre);
+        panel_2.add(lblAsignatura);
+        panel_3.add(lblNombre);
         txtNombre.setPreferredSize(new Dimension(70,70));
-        panel_2.add(txtNombre);
-        panel_2.add(lblRespuesta);
+        panel_3.add(txtNombre);
+        panel_3.add(lblRespuesta);
         txtRespuesta.setPreferredSize(new Dimension(70,70));
-        panel_2.add(txtRespuesta);
-        panel_3.add(Box.createVerticalStrut(80));
-        panel_3.add(lblEtiqueta);
-        panel_3.add(cmbLista);
-        panel_4.add(lblAsignatura);
-        panel_4.add(Box.createHorizontalStrut(100));
-        panel_4.add(btnAsignatura_2);
-        panel_6.add(lblAsignatura);
+        panel_3.add(txtRespuesta);
+
+        panel_4.add(lblEtiqueta);
+        panel_4.add(cmbLista);
+        panel_5.add(lblAsignatura);
+        panel_6.add(btnAsignatura_1);
+        panel_6.add(btnAsignatura_2);
+        panel_6.add(btnAsignatura_3);
+        panel_7.add(btnAsignatura_4);
+        panel_7.add(btnAsignatura_5);
+        panel_7.add(btnAsignatura_6);
+
 
 
 

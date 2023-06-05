@@ -79,7 +79,7 @@ public class AddCard extends JFrame{
 
             @Override
             public void run() {
-                new Register();
+                new AddCard();
             }
         });
     }
