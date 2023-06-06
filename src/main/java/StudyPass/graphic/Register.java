@@ -36,6 +36,7 @@ public class Register extends JFrame{
     final JButton btnAsignatura_5 = new JButton("Programacion");
 
     final JButton btnAsignatura_6 = new JButton("Historia");
+    final JButton register = new JButton("Register");
 
 
 
@@ -52,6 +53,7 @@ public class Register extends JFrame{
     final JPanel panel_5 = new JPanel();
     final JPanel panel_6 = new JPanel();
     final JPanel panel_7 = new JPanel();
+    final JPanel panel_8 = new JPanel();
 
 
 
@@ -66,8 +68,9 @@ public class Register extends JFrame{
         panel.add(panel_5);
         panel.add(panel_6);
         panel.add(panel_7);
+        panel.add(panel_8);
 
-        setSize(700, 1000);
+        setSize(700, 1030);
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 40));
         lblAsignatura.setPreferredSize(new Dimension(210,50));
@@ -77,6 +80,7 @@ public class Register extends JFrame{
         btnAsignatura_4.setPreferredSize(new Dimension(150,50));
         btnAsignatura_5.setPreferredSize(new Dimension(150,50));
         btnAsignatura_6.setPreferredSize(new Dimension(150,50));
+        register.setPreferredSize(new Dimension(150,70));
         panel_1.add(Box.createVerticalStrut(30));
         panel_1.add(titulo);
         panel_2.add(lblAsignatura);
@@ -96,6 +100,7 @@ public class Register extends JFrame{
         panel_7.add(btnAsignatura_4);
         panel_7.add(btnAsignatura_5);
         panel_7.add(btnAsignatura_6);
+        panel_8.add(register);
 
 
 
