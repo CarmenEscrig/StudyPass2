@@ -1,8 +1,10 @@
+/*
 package StudyPass.graphic;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
-public class GraficUsuario {
+public class GraficUsuario extends JFrame {
+
     public static void main(String[] args) {
         String user = JOptionPane.showInputDialog(null, "user");
         String password = JOptionPane.showInputDialog(null, "password");
@@ -16,3 +18,4 @@ public class GraficUsuario {
     }
 }
 
+*/
