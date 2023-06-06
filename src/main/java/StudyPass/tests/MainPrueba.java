@@ -1,4 +1,4 @@
-package StudyPass;
+package StudyPass.tests;
 
 import StudyPass.code.DatabaseConnection;
 import StudyPass.code.FlashCard;
