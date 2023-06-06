@@ -13,28 +13,31 @@ public class Progrssion extends JFrame {
 
     final JPanel panel_1 = new JPanel();
     final JPanel panel_2 = new JPanel();
+    final JPanel panel_3 = new JPanel();
+    final JPanel panel_4 = new JPanel();
     final JLabel correctas = new JLabel("Correctas: ");
     final JLabel incorrectas = new JLabel("Incorrectas: ");
-    int[] gjyu = {1,1};
+    int[] total = {2,1};
 
-    final Grafica grafica = new Grafica(gjyu);
+    final Grafica grafica = new Grafica(total);
 
     public Progrssion(){
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        setSize(700,600);
+        setSize(500,750);
         panel.add(panel_1);
         panel.add(panel_2);
+        panel.add(panel_3);
+        panel.add(panel_4);
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 40));
-        lblNombre.setFont(new Font("Courier New", Font.BOLD, 40));
-        correctas.setFont(new Font("Courier New", Font.BOLD, 40));
-        incorrectas.setFont(new Font("Courier New", Font.BOLD, 40));
+        lblNombre.setFont(new Font("Courier New", Font.BOLD, 30));
+        correctas.setFont(new Font("Courier New", Font.ITALIC, 20));
+        incorrectas.setFont(new Font("Courier New", Font.ITALIC, 20));
+        panel_1.add(Box.createVerticalStrut(50));
         panel_1.add(titulo);
         panel_2.add(lblNombre);
-        panel_2.add(correctas);
-        panel_2.add(incorrectas);
-        panel.add(panel_1);
-        panel.add(panel_2);
+        panel_3.add(correctas);
+        panel_4.add(incorrectas);
         panel.add(grafica);
         panel.add(Box.createVerticalStrut(80));
 
