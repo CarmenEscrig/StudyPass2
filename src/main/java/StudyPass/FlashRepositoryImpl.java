@@ -1,5 +1,6 @@
 package StudyPass;
 
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,7 +40,7 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
     }
 
     @Override
-    public void save(FlashCard flashCard) throws SQLException {
+    public void save(FlashCard flashCard) throws SQLException, IOException {
         if (flashCard.getId() == -1){
             ResultSet rs;
             PreparedStatement st = null;
@@ -57,6 +58,9 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
 
                 flashCard.setId(rs.getInt(1));
             }
+
+            flashCard.transformToFile();
+
         }else{
             PreparedStatement st = con.prepareStatement("UPDATE flashcards SET name = ?, lastName = ?, subjectid = ? WHERE id = ?");
             st.setString(1, flashCard.getQuestion());

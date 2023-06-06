@@ -1,5 +1,10 @@
 package StudyPass;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class FlashCard {
     private int id;
     private String question;
@@ -30,6 +35,19 @@ public class FlashCard {
         this.question = question;
         this.answer = answer;
         this.subject = subject;
+    }
+
+    public void transformToFile() throws IOException {
+        File file = new File("src/main/resources/FlashCards/" + this.id + ".txt");
+        file.createNewFile();
+
+        PrintWriter printWriter = new PrintWriter(new FileWriter(file));
+        printWriter.print(this.id + "@");
+        printWriter.print(this.question + "@");
+        printWriter.print(this.answer + "@");
+        printWriter.print(this.subject.getId());
+
+        printWriter.close();
     }
 
     public int getId() {
