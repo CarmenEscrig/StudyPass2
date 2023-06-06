@@ -4,14 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Grafica extends JPanel {
-
-
     private int[] valores;
 
     public Grafica(int[] valores) {
         this.valores = valores;
-
-
     }
 
     @Override
@@ -24,42 +20,36 @@ public class Grafica extends JPanel {
         }
 
         int anguloInicio = 0;
+        int radio = Math.min(getHeight(), getWidth()) / 2; // Calcula el radio para que quepa en el panel
+        int xCentro = getWidth() / 2; // Obtiene la coordenada x del centro del panel
+        int yCentro = getHeight() / 2; // Obtiene la coordenada y del centro del panel
 
         for (int i = 0; i < valores.length; i++) {
             int angulo = (int) Math.round((valores[i] * 360.0) / total);
 
             g.setColor(obtenerColor(i));
-            g.fillArc(50, 50, 200, 200, anguloInicio, angulo);
+            g.fillArc(xCentro - radio, yCentro - radio, 2 * radio, 2 * radio, anguloInicio, angulo);
 
             anguloInicio += angulo;
         }
     }
 
     private Color obtenerColor(int indice) {
-        Color[] colores = {Color.RED, Color.green};
+        Color[] colores = {Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.MAGENTA};
         int index = indice % colores.length;
         return colores[index];
     }
 
     public static void main(String[] args) {
-        final int[][] valore = new int[1][1];
-        SwingUtilities.invokeLater(new Runnable() {
+        int[] valores = {30, 50};
 
-            @Override
-            public void run() {
-                new Grafica(valore[0] = new int[]{1, 1});
-            }
-        });
-
-
-        JFrame ventana = new JFrame("StudyPass");
+        JFrame ventana = new JFrame("Gráfica Circular");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(300, 300);
 
-        Grafica grafica = new Grafica(valore[0]);
+        Grafica grafica = new Grafica(valores);
         ventana.add(grafica);
 
         ventana.setVisible(true);
-
     }
 }
