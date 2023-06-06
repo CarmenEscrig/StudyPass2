@@ -1,4 +1,4 @@
-package StudyPass;
+package StudyPass.code;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

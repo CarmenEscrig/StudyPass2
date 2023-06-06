@@ -1,9 +1,9 @@
-package StudyPass;
+package StudyPass.graphic;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class AnswerCard extends JFrame{
+public class AddCard extends JFrame{
 
     final JLabel titulo = new JLabel("Study Pass");
 
@@ -15,14 +15,16 @@ public class AnswerCard extends JFrame{
 
     JTextField txtRespuesta = new JTextField(50);
 
+    String[] opciones = { "Matematicas", "Fisica y Quimica", "Castellano", "Ingles", "Programacion", "Historia" };
 
-    final JLabel cmbLista = new JLabel("");
+    final JComboBox<String> cmbLista = new JComboBox<String>(opciones);
 
     final JLabel lblEtiqueta = new JLabel("Asignatura: ");
 
 
-    final JButton btnShowAnswer = new JButton("Show answer");
+    final JButton btnAdd = new JButton("Add");
 
+    final JButton btnExit = new JButton("Exit");
 
 
 
@@ -38,7 +40,7 @@ public class AnswerCard extends JFrame{
 
 
 
-    public AnswerCard() {
+    public AddCard() {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(panel_1);
         panel.add(panel_1);
@@ -48,18 +50,22 @@ public class AnswerCard extends JFrame{
         setSize(700, 600);
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 40));
-        btnShowAnswer.setPreferredSize(new Dimension(150,40));
+        btnAdd.setPreferredSize(new Dimension(250,50));
+        btnExit.setPreferredSize(new Dimension(250,50));
         panel_1.add(Box.createVerticalStrut(30));
         panel_1.add(titulo);
-        panel_3.add(lblNombre);
+        panel_2.add(lblNombre);
         txtNombre.setPreferredSize(new Dimension(70,70));
-        panel_3.add(txtNombre);
-        panel_3.add(lblRespuesta);
+        panel_2.add(txtNombre);
+        panel_2.add(lblRespuesta);
         txtRespuesta.setPreferredSize(new Dimension(70,70));
-        panel_3.add(txtRespuesta);
-        panel_2.add(lblEtiqueta);
-        panel_2.add(cmbLista);
-        panel_4.add(btnShowAnswer);
+        panel_2.add(txtRespuesta);
+        panel_3.add(Box.createVerticalStrut(80));
+        panel_3.add(lblEtiqueta);
+        panel_3.add(cmbLista);
+        panel_4.add(btnAdd);
+        panel_4.add(Box.createHorizontalStrut(100));
+        panel_4.add(btnExit);
 
 
 
@@ -73,7 +79,7 @@ public class AnswerCard extends JFrame{
 
             @Override
             public void run() {
-                new AnswerCard();
+                new AddCard();
             }
         });
     }

@@ -1,4 +1,4 @@
-package StudyPass;
+package StudyPass.code;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -1,5 +1,9 @@
 package StudyPass;
 
+import StudyPass.code.DatabaseConnection;
+import StudyPass.code.FlashCard;
+import StudyPass.code.Subject;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;

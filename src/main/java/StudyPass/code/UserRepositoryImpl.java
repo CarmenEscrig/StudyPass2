@@ -1,4 +1,4 @@
-package StudyPass;
+package StudyPass.code;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class UserRepositoryImpl implements IRepository<User>{
+public class UserRepositoryImpl implements IRepository<User> {
     private java.sql.Connection con;
     public UserRepositoryImpl(){
         this.con = SocialNetworkService.getConnection();

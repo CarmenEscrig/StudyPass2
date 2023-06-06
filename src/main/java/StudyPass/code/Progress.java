@@ -1,4 +1,4 @@
-package StudyPass;
+package StudyPass.code;
 
 public class Progress {
     private int id;

@@ -1,4 +1,4 @@
-package StudyPass;
+package StudyPass.code;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;

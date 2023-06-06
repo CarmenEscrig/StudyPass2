@@ -1,4 +1,4 @@
-package StudyPass;
+package StudyPass.graphic;
 
 import javax.swing.*;
 import java.awt.event.ItemEvent;
