@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
 
-public class Login extends JFrame{
+public class Indice extends JFrame {
     final JLabel titulo = new JLabel("Study Pass");
     final JButton iniciar_sesion = new JButton("Iniciar Sesion");
     final JButton registrarse = new JButton("Registrarse");
@@ -17,16 +17,16 @@ public class Login extends JFrame{
     final JPanel panel_3 = new JPanel();
 
 
-    public Login() {
+    public Indice() {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(panel_1);
         panel.add(panel_3);
         setSize(1960, 1080);
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 80));
-        iniciar_sesion.setPreferredSize(new Dimension(450,250));
-        iniciar_sesion.setFont(new Font("Courier New",Font.ITALIC,40));
-        registrarse.setPreferredSize(new Dimension(450,250));
+        iniciar_sesion.setPreferredSize(new Dimension(450, 250));
+        iniciar_sesion.setFont(new Font("Courier New", Font.ITALIC, 40));
+        registrarse.setPreferredSize(new Dimension(450, 250));
         registrarse.setFont(new Font("Courier New", Font.ITALIC, 40));
         panel_1.add(Box.createVerticalStrut(150));
         panel_1.add(titulo);
@@ -63,12 +63,28 @@ public class Login extends JFrame{
         for (User u : userRepository.findAll()) {
             if (user.equals(u.getUsername()) && password.equals(u.getPassword())) {
                 JOptionPane.showMessageDialog(null, "login ok");
-            } else {
-                JOptionPane.showMessageDialog(null, "login failed");
+                if (u.getType().equals("estudiante")) {
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            new StudentMain();
+                        }
+                    });
+                } else {
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            new ProfessorMain();
+                        }
+                    });
+                }
+                setVisible(false);
+                break;
             }
-        }
+            JOptionPane.showMessageDialog(null, "login failed");
 
-    }
+
+        }
 
 
 
@@ -81,4 +97,5 @@ public class Login extends JFrame{
             }
         });
     }*/
+    }
 }

@@ -3,7 +3,7 @@ package StudyPass.graphic;
 import javax.swing.*;
 import java.awt.*;
 
-public class ShowCard extends JFrame {
+public class ShowCards extends JFrame {
 
     final JLabel titulo = new JLabel("Study Pass");
     final JLabel lblNombre = new JLabel("Flashcards:");
@@ -17,7 +17,7 @@ public class ShowCard extends JFrame {
     final JPanel panel_2 = new JPanel();
     final JPanel panel_3 = new JPanel();
 
-    public ShowCard() {
+    public ShowCards() {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         setSize(600, 750);
         panel.add(panel_1);
@@ -43,7 +43,7 @@ public class ShowCard extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new ShowCard();
+                new ShowCards();
             }
         });
     }

@@ -2,7 +2,7 @@ package StudyPass.tests;
 
 import StudyPass.code.Subject;
 import StudyPass.code.SubjectRepositoryImpl;
-import StudyPass.graphic.Login;
+import StudyPass.graphic.Indice;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -24,7 +24,7 @@ public class Jajajajajjajaj {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Login();
+                new Indice();
             }
         });
     }

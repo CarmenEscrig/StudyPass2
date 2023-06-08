@@ -2,12 +2,13 @@ package StudyPass.graphic;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
-public class PrincipalProfe extends JFrame {
+public class StudentMain extends JFrame {
     final JLabel titulo = new JLabel("Study Pass");
-    final JButton estudiar = new JButton("Añadir tarjetas");
+    final JButton estudiar = new JButton("Empezar a estudiar");
     final JButton tarjeta = new JButton("Ver Tarjetas");
-    final JButton progreso = new JButton("Ver Alumnos");
+    final JButton progreso = new JButton("Ver Progreso");
 
     final Container panel = getContentPane();
     final JPanel panel_1 = new JPanel();
@@ -15,7 +16,7 @@ public class PrincipalProfe extends JFrame {
     final JPanel panel_3 = new JPanel();
 
 
-    public PrincipalProfe() {
+    public StudentMain() {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(panel_1);
         panel.add(panel_2);
@@ -39,6 +40,28 @@ public class PrincipalProfe extends JFrame {
         panel_2.setBackground(Color.black);
         panel_3.setBackground(Color.black);
 
+        estudiar.addActionListener((e) -> {
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        new AnswerCard();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+            });
+        });
+
+        tarjeta.addActionListener((e) -> {
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    new ShowCards();
+                }
+            });
+        });
+
 
         setVisible(true);
     }
@@ -47,7 +70,7 @@ public class PrincipalProfe extends JFrame {
 
             @Override
             public void run() {
-                new PrincipalProfe();
+                new StudentMain();
             }
         });
     }

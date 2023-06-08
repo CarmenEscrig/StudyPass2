@@ -3,11 +3,11 @@ package StudyPass.graphic;
 import javax.swing.*;
 import java.awt.*;
 
-public class Principal extends JFrame {
+public class ProfessorMain extends JFrame {
     final JLabel titulo = new JLabel("Study Pass");
-    final JButton estudiar = new JButton("Empezar a estudiar");
+    final JButton estudiar = new JButton("Añadir tarjetas");
     final JButton tarjeta = new JButton("Ver Tarjetas");
-    final JButton progreso = new JButton("Ver Progreso");
+    final JButton progreso = new JButton("Ver Alumnos");
 
     final Container panel = getContentPane();
     final JPanel panel_1 = new JPanel();
@@ -15,7 +15,7 @@ public class Principal extends JFrame {
     final JPanel panel_3 = new JPanel();
 
 
-    public Principal() {
+    public ProfessorMain() {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(panel_1);
         panel.add(panel_2);
@@ -47,7 +47,7 @@ public class Principal extends JFrame {
 
             @Override
             public void run() {
-                new Principal();
+                new ProfessorMain();
             }
         });
     }

@@ -3,7 +3,7 @@ package StudyPass.graphic;
 import javax.swing.*;
 import java.awt.*;
 
-public class Progrssion extends JFrame {
+public class Progress extends JFrame {
 
     final JLabel titulo = new JLabel("Study Pass");
 
@@ -21,7 +21,7 @@ public class Progrssion extends JFrame {
 
     final Grafica grafica = new Grafica(total);
 
-    public Progrssion(){
+    public Progress(){
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         setSize(500,750);
         panel.add(panel_1);
@@ -51,7 +51,7 @@ public class Progrssion extends JFrame {
 
             @Override
             public void run() {
-                new Progrssion();
+                new Progress();
             }
         });
     }

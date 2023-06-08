@@ -1,16 +1,18 @@
 package StudyPass.code;
 
+import StudyPass.graphic.Indice;
+
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class FlashRepositoryImpl implements IRepository<FlashCard> {
+
+    private static List<Integer> numbers = new ArrayList<>();
+
     private java.sql.Connection con;
     public FlashRepositoryImpl(){
         this.con = SocialNetworkService.getConnection();
@@ -37,6 +39,24 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
             flashCards.add(f);
         }
         return flashCards;
+    }
+
+    public void resetNumbers() throws SQLException {
+        numbers.clear();
+        int max = findAll().size();
+        for (int i = 0; i < max; i++) {
+            numbers.add(i);
+        }
+    }
+
+    public FlashCard randomCard() throws SQLException {
+
+        Random random = new Random();
+
+        int num = random.nextInt(findAll().size());
+
+        return findAll().get(num);
+
     }
 
     @Override

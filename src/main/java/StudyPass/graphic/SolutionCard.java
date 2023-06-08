@@ -3,13 +3,13 @@ package StudyPass.graphic;
 import javax.swing.*;
 import java.awt.*;
 
-public class ShowAnswerCard extends JFrame{
+public class SolutionCard extends JFrame{
 
     final JLabel titulo = new JLabel("Study Pass");
 
     final JLabel lblNombre = new JLabel("Pregunta      ");
 
-    final JTextField txtNombre = new JTextField(50);
+    final JLabel txtNombre = new JLabel();
 
     final JLabel lblRespuesta = new JLabel("Your Answer");
 
@@ -40,15 +40,19 @@ public class ShowAnswerCard extends JFrame{
     final JPanel panel_3 = new JPanel();
 
     final JPanel panel_4 = new JPanel();
+    final JPanel panel_5 = new JPanel();
 
 
 
-    public ShowAnswerCard() {
+    public SolutionCard() {
+
+
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(panel_1);
         panel.add(panel_1);
         panel.add(panel_2);
         panel.add(panel_3);
+        panel.add(panel_5);
         panel.add(panel_4);
         setSize(700, 850);
         setTitle("StudyPass");
@@ -60,14 +64,14 @@ public class ShowAnswerCard extends JFrame{
         panel_3.add(lblNombre);
         txtNombre.setPreferredSize(new Dimension(70,70));
         panel_3.add(txtNombre);
-        panel_3.add(lblRespuesta);
+        panel_5.add(lblRespuesta);
         txtRespuesta.setPreferredSize(new Dimension(70,70));
-        panel_3.add(txtRespuesta);
+        panel_5.add(txtRespuesta);
         panel_2.add(lblEtiqueta);
         panel_2.add(cmbLista);
-        panel_3.add(lblShow);
+        panel_5.add(lblShow);
         txtShow.setPreferredSize(new Dimension(70,70));
-        panel_3.add(txtShow);
+        panel_5.add(txtShow);
         panel_4.add(btnCorrect);
         panel_4.add(Box.createHorizontalStrut(150));
         panel_4.add(btnIncorrect);
@@ -79,13 +83,5 @@ public class ShowAnswerCard extends JFrame{
     }
 
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
 
-            @Override
-            public void run() {
-                new ShowAnswerCard();
-            }
-        });
-    }
 }

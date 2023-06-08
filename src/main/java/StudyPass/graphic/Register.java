@@ -107,7 +107,11 @@ public class Register extends JFrame{
         panel_7.add(btnAsignatura_6);
         panel_8.add(register);
 
-        register.addActionListener((e) -> registUser());
+        register.addActionListener((e) -> {
+            registUser();
+            setVisible(false);
+            ;
+        });
 
         setVisible(true);
 
@@ -151,15 +155,5 @@ public class Register extends JFrame{
             throw new RuntimeException(e);
         }
 
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-
-            @Override
-            public void run() {
-                new Register();
-            }
-        });
     }
 }
