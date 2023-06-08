@@ -1,7 +1,12 @@
 package StudyPass.graphic;
 
+import StudyPass.code.User;
+import StudyPass.code.UserRepositoryImpl;
+import StudyPass.tests.Jajajajajjajaj;
+
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 public class Register extends JFrame{
 
@@ -19,19 +24,19 @@ public class Register extends JFrame{
 
     String[] opciones = { "Estudiante", "Profesor" };
 
-    final JComboBox<String> cmbLista = new JComboBox<String>(opciones);
+    final JComboBox<String> cmbLista = new JComboBox<>(opciones);
 
     final JLabel lblEtiqueta = new JLabel("Tipo: ");
 
 
     final JLabel lblAsignatura = new JLabel("Seleccione sus asignaturas: ");
 
-    final JButton btnAsignatura_1 = new JButton("Matematicas");
-    final JButton btnAsignatura_2 = new JButton("Fisica y Quimica");
+    final JToggleButton btnAsignatura_1 = new JToggleButton("Matematicas");
+    final JToggleButton btnAsignatura_2 = new JToggleButton("Fisica y Quimica");
 
-    final JButton btnAsignatura_3 = new JButton("Castellano");
+    final JToggleButton btnAsignatura_3 = new JToggleButton("Castellano");
 
-    final JButton btnAsignatura_4 = new JButton("Ingles");
+    final JToggleButton btnAsignatura_4 = new JToggleButton("Ingles");
 
     final JButton btnAsignatura_5 = new JButton("Programacion");
 
@@ -102,13 +107,51 @@ public class Register extends JFrame{
         panel_7.add(btnAsignatura_6);
         panel_8.add(register);
 
-
-
-
+        register.addActionListener((e) -> registUser());
 
         setVisible(true);
+
     }
 
+    public void registUser() {
+        String username = txtNombre.getText();
+        String password = txtRespuesta.getText();
+        String type = cmbLista.getSelectedItem().toString().toLowerCase();
+        User user = new User(username, password, type);
+
+        if (btnAsignatura_1.isSelected()) {
+            user.addSubject(Jajajajajjajaj.subjects.get(0));
+            btnAsignatura_1.setSelected(false);
+        }
+        if (btnAsignatura_2.isSelected()) {
+            user.addSubject(Jajajajajjajaj.subjects.get(1));
+            btnAsignatura_2.setSelected(false);
+        }
+        if (btnAsignatura_3.isSelected()) {
+            user.addSubject(Jajajajajjajaj.subjects.get(2));
+            btnAsignatura_3.setSelected(false);
+        }
+        if (btnAsignatura_4.isSelected()) {
+            user.addSubject(Jajajajajjajaj.subjects.get(3));
+            btnAsignatura_4.setSelected(false);
+        }
+        if (btnAsignatura_5.isSelected()) {
+            user.addSubject(Jajajajajjajaj.subjects.get(4));
+            btnAsignatura_5.setSelected(false);
+        }
+        if (btnAsignatura_6.isSelected()) {
+            user.addSubject(Jajajajajjajaj.subjects.get(5));
+            btnAsignatura_6.setSelected(false);
+        }
+
+        try {
+            UserRepositoryImpl userRepository = new UserRepositoryImpl();
+            userRepository.save(user);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
