@@ -57,7 +57,11 @@ public class StudentMain extends JFrame {
             SwingUtilities.invokeLater(new Runnable() {
                 @Override
                 public void run() {
-                    new ShowCards();
+                    try {
+                        new ShowCards();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 }
             });
         });
