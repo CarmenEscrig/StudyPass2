@@ -54,7 +54,7 @@ public class ProfessorMain extends JFrame {
                 @Override
                 public void run() {
                     try {
-                        new ShowCards();
+                        new ShowStudents();
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
