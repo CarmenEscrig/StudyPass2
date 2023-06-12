@@ -45,7 +45,7 @@ public class StudentMain extends JFrame {
                 @Override
                 public void run() {
                     try {
-                        new AnswerCard();
+                        new SolutionCard();
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
@@ -62,16 +62,15 @@ public class StudentMain extends JFrame {
             });
         });
 
+        progreso.addActionListener((e) -> {
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    new Progress();
+                }
+            });
+        });
 
         setVisible(true);
-    }
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-
-            @Override
-            public void run() {
-                new StudentMain();
-            }
-        });
     }
 }

@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
 
-public class AnswerCard extends JFrame{
+public class QuestionCard extends JFrame{
 
     FlashRepositoryImpl flashRepository = new FlashRepositoryImpl();
 
@@ -46,7 +46,7 @@ public class AnswerCard extends JFrame{
 
 
 
-    public AnswerCard() throws SQLException {
+    public QuestionCard() throws SQLException {
 
         flashRepository.resetNumbers();
         flashCard = flashRepository.randomCard();
@@ -83,7 +83,11 @@ public class AnswerCard extends JFrame{
             SwingUtilities.invokeLater(new Runnable() {
                 @Override
                 public void run() {
-                    new SolutionCard();
+                    try {
+                        new SolutionCard();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 }
             });
         });
@@ -101,7 +105,7 @@ public class AnswerCard extends JFrame{
             @Override
             public void run() {
                 try {
-                    new AnswerCard();
+                    new QuestionCard();
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }

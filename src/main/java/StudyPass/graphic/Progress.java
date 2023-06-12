@@ -1,9 +1,13 @@
 package StudyPass.graphic;
 
+import StudyPass.tests.Jajajajajjajaj;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class Progress extends JFrame {
+
+    StudyPass.code.Progress progress = Jajajajajjajaj.user.getProgress();
 
     final JLabel titulo = new JLabel("Study Pass");
 
@@ -17,7 +21,7 @@ public class Progress extends JFrame {
     final JPanel panel_4 = new JPanel();
     final JLabel correctas = new JLabel("Correctas: ");
     final JLabel incorrectas = new JLabel("Incorrectas: ");
-    int[] total = {2,1};
+    int[] total = {progress.getCorrect(),progress.getIncorrect()};
 
     final Grafica grafica = new Grafica(total);
 

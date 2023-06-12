@@ -20,6 +20,9 @@ public class Subject {
         this.name = name;
     }
 
+    public Subject() {
+    }
+
     public int getId() {
         return id;
     }

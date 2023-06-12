@@ -1,28 +1,39 @@
 package StudyPass.graphic;
 
+import StudyPass.code.FlashCard;
+import StudyPass.code.FlashRepositoryImpl;
+
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 public class SolutionCard extends JFrame{
 
+    FlashRepositoryImpl flashRepository = new FlashRepositoryImpl();
+
+    FlashCard flashCard;
+
     final JLabel titulo = new JLabel("Study Pass");
 
-    final JLabel lblNombre = new JLabel("Pregunta      ");
+    final JLabel jLabQuestion = new JLabel("Pregunta: ");
 
-    final JLabel txtNombre = new JLabel();
+    final JLabel jLabQuestionText = new JLabel();
 
-    final JLabel lblRespuesta = new JLabel("Your Answer");
+    final JLabel jLabYourAnswer = new JLabel("Your Answer: ");
 
     final JTextField txtRespuesta = new JTextField(50);
 
-    final JLabel lblShow = new JLabel("Answer         ");
+    final JLabel jLabAnswer = new JLabel("Answer: ");
 
-    final JTextField txtShow = new JTextField(50);
+    final JLabel jLabAnswerText = new JLabel();
 
 
     final JLabel cmbLista = new JLabel("");
 
     final JLabel lblEtiqueta = new JLabel("Asignatura: ");
+
+
+    final JButton btnShowAnswer = new JButton("Show answer");
 
 
     final JButton btnCorrect = new JButton("Correct");
@@ -42,41 +53,66 @@ public class SolutionCard extends JFrame{
     final JPanel panel_4 = new JPanel();
     final JPanel panel_5 = new JPanel();
 
+    final JPanel panel_6 = new JPanel();
 
 
-    public SolutionCard() {
+
+
+    public SolutionCard() throws SQLException {
+
+        flashRepository.resetNumbers();
+        flashCard = flashRepository.randomCard();
+
+        jLabQuestionText.setText(flashCard.getQuestion());
+
+        cmbLista.setText(flashCard.getSubject().getName());
+
+        jLabAnswerText.setText(flashCard.getAnswer());
 
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(panel_1);
-        panel.add(panel_1);
         panel.add(panel_2);
         panel.add(panel_3);
-        panel.add(panel_5);
         panel.add(panel_4);
+        panel.add(panel_5);
+        panel.add(panel_6);
+
         setSize(700, 850);
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 40));
+
+        btnShowAnswer.setPreferredSize(new Dimension(150,40));
         btnCorrect.setPreferredSize(new Dimension(150,40));
         btnIncorrect.setPreferredSize(new Dimension(150,40));
+
+
         panel_1.add(Box.createVerticalStrut(30));
         panel_1.add(titulo);
-        panel_3.add(lblNombre);
-        txtNombre.setPreferredSize(new Dimension(70,70));
-        panel_3.add(txtNombre);
-        panel_5.add(lblRespuesta);
-        txtRespuesta.setPreferredSize(new Dimension(70,70));
-        panel_5.add(txtRespuesta);
+
         panel_2.add(lblEtiqueta);
         panel_2.add(cmbLista);
-        panel_5.add(lblShow);
-        txtShow.setPreferredSize(new Dimension(70,70));
-        panel_5.add(txtShow);
-        panel_4.add(btnCorrect);
-        panel_4.add(Box.createHorizontalStrut(150));
-        panel_4.add(btnIncorrect);
+
+        panel_3.add(jLabQuestion);
+        panel_3.add(jLabQuestionText);
+
+        panel_4.add(jLabYourAnswer);
+        txtRespuesta.setPreferredSize(new Dimension(70,70));
+        panel_4.add(txtRespuesta);
 
 
+
+
+        panel_6.add(btnShowAnswer);
+
+        btnShowAnswer.addActionListener((e) -> {
+            btnShowAnswer.setVisible(false);
+            panel_5.add(jLabAnswer);
+            panel_5.add(jLabAnswerText);
+            panel_6.add(btnCorrect);
+            panel_6.add(Box.createHorizontalStrut(150));
+            panel_6.add(btnIncorrect);
+        });
 
 
         setVisible(true);

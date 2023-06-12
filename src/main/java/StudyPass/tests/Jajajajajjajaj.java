@@ -2,6 +2,7 @@ package StudyPass.tests;
 
 import StudyPass.code.Subject;
 import StudyPass.code.SubjectRepositoryImpl;
+import StudyPass.code.User;
 import StudyPass.graphic.Indice;
 
 import javax.swing.*;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 
 public class Jajajajajjajaj {
 
+    public static User user;
     public static ArrayList<Subject> subjects;
 
     static {

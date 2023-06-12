@@ -2,6 +2,7 @@ package StudyPass.graphic;
 
 import StudyPass.code.User;
 import StudyPass.code.UserRepositoryImpl;
+import StudyPass.tests.Jajajajajjajaj;
 
 import javax.swing.*;
 import java.awt.*;
@@ -63,6 +64,7 @@ public class Indice extends JFrame {
         for (User u : userRepository.findAll()) {
             if (user.equals(u.getUsername()) && password.equals(u.getPassword())) {
                 JOptionPane.showMessageDialog(null, "login ok");
+                Jajajajajjajaj.user = u;
                 if (u.getType().equals("estudiante")) {
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override

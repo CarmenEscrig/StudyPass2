@@ -23,6 +23,7 @@ public class FlashCard {
         this.answer = answer;
     }
 
+
     public FlashCard(String question, String answer, Subject subject) {
         this.id = -1;
         this.question = question;
