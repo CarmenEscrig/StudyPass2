@@ -111,6 +111,15 @@ public class Register extends JFrame{
         panel_7.add(btnAsignatura_6);
         panel_8.add(register);
 
+        panel_1.setBackground(new Color(242,247,255));
+        panel_2.setBackground(new Color(242,247,255));
+        panel_3.setBackground(new Color(242,247,255));
+        panel_4.setBackground(new Color(242,247,255));
+        panel_5.setBackground(new Color(242,247,255));
+        panel_6.setBackground(new Color(242,247,255));
+        panel_7.setBackground(new Color(242,247,255));
+        panel_8.setBackground(new Color(242,247,255));
+
         register.addActionListener((e) -> {
             registUser();
             setVisible(false);

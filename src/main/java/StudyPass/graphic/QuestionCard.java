@@ -80,6 +80,11 @@ public class QuestionCard extends JFrame{
         panel_2.add(lblEtiqueta);
         panel_2.add(cmbLista);
         panel_4.add(btnShowAnswer);
+        panel_1.setBackground(new Color(242,247,255));
+        panel_2.setBackground(new Color(242,247,255));
+        panel_3.setBackground(new Color(242,247,255));
+        panel_4.setBackground(new Color(242,247,255));
+        panel_5.setBackground(new Color(242,247,255));
 
         btnShowAnswer.addActionListener((e) -> {
             SwingUtilities.invokeLater(new Runnable() {

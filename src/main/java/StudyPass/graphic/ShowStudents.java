@@ -51,6 +51,9 @@ public class ShowStudents extends JFrame {
         panel_2.add(lblNombre);
         panel_3.add(tool);
         panel_3.add(new JScrollPane(list));
+        panel_1.setBackground(new Color(242,247,255));
+        panel_2.setBackground(new Color(242,247,255));
+        panel_3.setBackground(new Color(242,247,255));
 
         setVisible(true);
     }

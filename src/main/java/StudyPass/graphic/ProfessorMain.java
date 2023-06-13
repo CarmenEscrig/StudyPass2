@@ -39,9 +39,9 @@ public class ProfessorMain extends JFrame {
         panel_3.add(showCards);
         panel_3.add(Box.createHorizontalStrut(350));
         panel_3.add(showStudents);
-        panel_1.setBackground(Color.black);
-        panel_2.setBackground(Color.black);
-        panel_3.setBackground(Color.black);
+        panel_1.setBackground(new Color(242,247,255));
+        panel_2.setBackground(new Color(242,247,255));
+        panel_3.setBackground(new Color(242,247,255));
 
         addCard.addActionListener((e) -> {
             SwingUtilities.invokeLater(new Runnable() {

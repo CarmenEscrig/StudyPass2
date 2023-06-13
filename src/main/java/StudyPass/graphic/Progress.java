@@ -44,6 +44,10 @@ public class Progress extends JFrame {
         panel_4.add(incorrectas);
         panel.add(grafica);
         panel.add(Box.createVerticalStrut(80));
+        panel_1.setBackground(new Color(242,247,255));
+        panel_2.setBackground(new Color(242,247,255));
+        panel_3.setBackground(new Color(242,247,255));
+        panel_4.setBackground(new Color(242,247,255));
 
 
         setVisible(true);
