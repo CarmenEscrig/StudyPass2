@@ -31,16 +31,16 @@ public class Register extends JFrame{
 
     final JLabel lblAsignatura = new JLabel("Seleccione sus asignaturas: ");
 
-    final JToggleButton btnAsignatura_1 = new JToggleButton("Matematicas");
-    final JToggleButton btnAsignatura_2 = new JToggleButton("Fisica y Quimica");
+    final JToggleButton btnAsignatura_1 = new JToggleButton(Jajajajajjajaj.subjects.get(0).getName());
+    final JToggleButton btnAsignatura_2 = new JToggleButton(Jajajajajjajaj.subjects.get(1).getName());
 
-    final JToggleButton btnAsignatura_3 = new JToggleButton("Castellano");
+    final JToggleButton btnAsignatura_3 = new JToggleButton(Jajajajajjajaj.subjects.get(2).getName());
 
-    final JToggleButton btnAsignatura_4 = new JToggleButton("Ingles");
+    final JToggleButton btnAsignatura_4 = new JToggleButton(Jajajajajjajaj.subjects.get(3).getName());
 
-    final JButton btnAsignatura_5 = new JButton("Programacion");
+    final JButton btnAsignatura_5 = new JButton(Jajajajajjajaj.subjects.get(4).getName());
 
-    final JButton btnAsignatura_6 = new JButton("Historia");
+    final JButton btnAsignatura_6 = new JButton(Jajajajajjajaj.subjects.get(5).getName());
     final JButton register = new JButton("Register");
 
 

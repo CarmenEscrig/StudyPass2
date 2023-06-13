@@ -1,3 +1,4 @@
+/*
 package StudyPass.graphic;
 
 import StudyPass.code.FlashCard;
@@ -113,3 +114,4 @@ public class QuestionCard extends JFrame{
         });
     }
 }
+*/

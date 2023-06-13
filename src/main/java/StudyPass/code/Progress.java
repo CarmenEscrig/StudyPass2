@@ -46,4 +46,11 @@ public class Progress {
     public void setIncorrect(int incorrect) {
         this.incorrect = incorrect;
     }
+
+    public void increaseCorrect() {
+        this.correct ++;
+    }
+    public void increaseIncorrect() {
+        this.incorrect ++;
+    }
 }

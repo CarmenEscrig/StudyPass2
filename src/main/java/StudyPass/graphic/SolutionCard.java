@@ -2,13 +2,15 @@ package StudyPass.graphic;
 
 import StudyPass.code.FlashCard;
 import StudyPass.code.FlashRepositoryImpl;
+import StudyPass.code.Subject;
+import StudyPass.tests.Jajajajajjajaj;
 
 import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
 
 public class SolutionCard extends JFrame{
-
+    private int cont = 10;
     FlashRepositoryImpl flashRepository = new FlashRepositoryImpl();
 
     FlashCard flashCard;
@@ -61,13 +63,7 @@ public class SolutionCard extends JFrame{
     public SolutionCard() throws SQLException {
 
         flashRepository.resetNumbers();
-        flashCard = flashRepository.randomCard();
-
-        jLabQuestionText.setText(flashCard.getQuestion());
-
-        cmbLista.setText(flashCard.getSubject().getName());
-
-        jLabAnswerText.setText(flashCard.getAnswer());
+        changeFlash();
 
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -101,8 +97,6 @@ public class SolutionCard extends JFrame{
         panel_4.add(txtRespuesta);
 
 
-
-
         panel_6.add(btnShowAnswer);
 
         btnShowAnswer.addActionListener((e) -> {
@@ -114,8 +108,71 @@ public class SolutionCard extends JFrame{
             panel_6.add(btnIncorrect);
         });
 
+        btnCorrect.addActionListener((e) -> {
+            if (cont == 0) {
+                setVisible(false);
+            } else {
+                cont --;
+                Jajajajajjajaj.user.getProgress().increaseCorrect();
+                btnCorrect.setVisible(false);
+                btnIncorrect.setVisible(false);
+                panel_5.remove(jLabAnswer);
+                panel_5.remove(jLabAnswerText);
+                panel_6.remove(btnCorrect);
+                panel_6.remove(btnIncorrect);
+                try {
+                    changeFlash();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                btnShowAnswer.setVisible(true);
+            }
+        });
+
+        btnIncorrect.addActionListener((e) -> {
+            if (cont == 0) {
+                setVisible(false);
+            } else {
+                cont --;
+                Jajajajajjajaj.user.getProgress().increaseIncorrect();
+                btnCorrect.setVisible(false);
+                btnIncorrect.setVisible(false);
+                panel_5.remove(jLabAnswer);
+                panel_5.remove(jLabAnswerText);
+                panel_6.remove(btnCorrect);
+                panel_6.remove(btnIncorrect);
+                try {
+                    changeFlash();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                btnShowAnswer.setVisible(true);
+            }
+        });
+
 
         setVisible(true);
+    }
+
+    public void changeFlash() throws SQLException {
+        boolean esAsignatura = false;
+
+        do {
+            flashCard = flashRepository.randomCard();
+            for(Subject s : Jajajajajjajaj.user.getSubjects()) {
+                if (flashCard.getSubject() == s) {
+                    esAsignatura = true;
+                    break;
+                }
+            }
+        } while (esAsignatura == false);
+
+        jLabQuestionText.setText(flashCard.getQuestion());
+
+        cmbLista.setText(flashCard.getSubject().getName());
+
+        jLabAnswerText.setText(flashCard.getAnswer());
+
     }
 
 
