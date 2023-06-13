@@ -26,6 +26,7 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
 
     //Lista para gestionar las flashcards que se mostraran al estudiar
     private static List<Integer> numbers = new ArrayList<>();
+    private static Random random = new Random();
 
 
     //Transformar la flashcard de la base de datos en un objecto
@@ -132,7 +133,6 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
     //Se randomiza la flashcard a mostrar
     public FlashCard randomCard() throws SQLException {
 
-        Random random = new Random();
 
         int num = random.nextInt(findAll().size());
 

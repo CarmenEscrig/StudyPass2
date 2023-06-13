@@ -10,7 +10,7 @@ import java.awt.*;
 import java.sql.SQLException;
 
 public class SolutionCard extends JFrame{
-    private int cont = 10;
+    private int cont = 5;
     FlashRepositoryImpl flashRepository = new FlashRepositoryImpl();
 
     FlashCard flashCard;
@@ -99,16 +99,24 @@ public class SolutionCard extends JFrame{
         textRespuesta.setPreferredSize(new Dimension(70,70));
         panel_4.add(textRespuesta);
 
+        panel_5.add(jLabAnswer);
+        panel_5.add(jLabAnswerText);
+        jLabAnswer.setVisible(false);
+        jLabAnswerText.setVisible(false);
 
+        panel_6.add(btnCorrect);
         panel_6.add(btnShowAnswer);
+        panel_6.add(btnIncorrect);
+        btnCorrect.setVisible(false);
+        btnIncorrect.setVisible(false);
+
 
         btnShowAnswer.addActionListener((e) -> {
             btnShowAnswer.setVisible(false);
-            panel_5.add(jLabAnswer);
-            panel_5.add(jLabAnswerText);
-            panel_6.add(btnCorrect);
-            panel_6.add(Box.createHorizontalStrut(150));
-            panel_6.add(btnIncorrect);
+            jLabAnswer.setVisible(true);
+            jLabAnswerText.setVisible(true);
+            btnCorrect.setVisible(true);
+            btnIncorrect.setVisible(true);
         });
 
         btnCorrect.addActionListener((e) -> {
@@ -119,10 +127,9 @@ public class SolutionCard extends JFrame{
                 Jajajajajjajaj.user.getProgress().increaseCorrect();
                 btnCorrect.setVisible(false);
                 btnIncorrect.setVisible(false);
-                panel_5.remove(jLabAnswer);
-                panel_5.remove(jLabAnswerText);
-                panel_6.remove(btnCorrect);
-                panel_6.remove(btnIncorrect);
+                btnShowAnswer.setVisible(true);
+                jLabAnswer.setVisible(false);
+                jLabAnswerText.setVisible(false);
                 try {
                     changeFlash();
                 } catch (SQLException ex) {
@@ -140,10 +147,9 @@ public class SolutionCard extends JFrame{
                 Jajajajajjajaj.user.getProgress().increaseIncorrect();
                 btnCorrect.setVisible(false);
                 btnIncorrect.setVisible(false);
-                panel_5.remove(jLabAnswer);
-                panel_5.remove(jLabAnswerText);
-                panel_6.remove(btnCorrect);
-                panel_6.remove(btnIncorrect);
+                btnShowAnswer.setVisible(true);
+                jLabAnswer.setVisible(false);
+                jLabAnswerText.setVisible(false);
                 try {
                     changeFlash();
                 } catch (SQLException ex) {
@@ -163,7 +169,7 @@ public class SolutionCard extends JFrame{
         do {
             flashCard = flashRepository.randomCard();
             for(Subject s : Jajajajajjajaj.user.getSubjects()) {
-                if (flashCard.getSubject() == s) {
+                if (flashCard.getSubject().getId() == s.getId()) {
                     esAsignatura = true;
                     break;
                 }

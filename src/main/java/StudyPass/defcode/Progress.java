@@ -1,5 +1,7 @@
 package StudyPass.defcode;
 
+import java.sql.SQLException;
+
 public class Progress {
     private int id;
     private int correct;
@@ -49,8 +51,18 @@ public class Progress {
 
     public void increaseCorrect() {
         this.correct ++;
+        try {
+            new ProgressRepositoryImpl().save(this);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void increaseIncorrect() {
         this.incorrect ++;
+        try {
+            new ProgressRepositoryImpl().save(this);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -20,8 +20,8 @@ public class Progress extends JFrame {
     final JPanel panel_2 = new JPanel();
     final JPanel panel_3 = new JPanel();
     final JPanel panel_4 = new JPanel();
-    final JLabel lblCorrectas = new JLabel("Correctas: ");
-    final JLabel lblIncorrectas = new JLabel("Incorrectas: ");
+    final JLabel lblCorrectas = new JLabel("Correctas: " + progress.getCorrect());
+    final JLabel lblIncorrectas = new JLabel("Incorrectas: " + progress.getIncorrect());
     int[] total = {progress.getCorrect(),progress.getIncorrect()};
 
     final Grafica grafica = new Grafica(total);
@@ -53,7 +53,6 @@ public class Progress extends JFrame {
 
         setVisible(true);
     }
-
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
