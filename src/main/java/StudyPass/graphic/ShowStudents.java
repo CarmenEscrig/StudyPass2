@@ -1,22 +1,19 @@
 package StudyPass.graphic;
 
-import StudyPass.code.FlashCard;
-import StudyPass.code.FlashRepositoryImpl;
-import StudyPass.code.Subject;
+import StudyPass.code.*;
 import StudyPass.tests.Jajajajajjajaj;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ShowCards extends JFrame {
+public class ShowStudents extends JFrame {
 
     final JLabel titulo = new JLabel("Study Pass");
-    final JLabel lblNombre = new JLabel("Flashcards:");
-    FlashCard[] items = new FlashCard[0];
-    final JList<FlashCard> list = new JList<>(items);
+    final JLabel lblNombre = new JLabel("Estudiantes:");
+    User[] items;
+    final JList<User> list = new JList<>(items);
     final JToolBar tool = new JToolBar();
 
 
@@ -25,14 +22,18 @@ public class ShowCards extends JFrame {
     final JPanel panel_2 = new JPanel();
     final JPanel panel_3 = new JPanel();
 
-    public ShowCards() throws SQLException {
+    public ShowStudents() throws SQLException {
 
-        ArrayList<FlashCard> flashCards = new ArrayList<>();
+        ArrayList<User> users = new ArrayList<>();
         for (Subject s : Jajajajajjajaj.user.getSubjects()) {
-            flashCards.addAll(new FlashRepositoryImpl().findBySubject(s));
+            for (User u : new UserRepositoryImpl().findBySubject(s)) {
+                if (u.getType().equals("estudiante")) {
+                    users.add(u);
+                }
+            }
         }
 
-        items = (FlashCard[]) flashCards.toArray();
+        items = (User[]) users.toArray();
 
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));

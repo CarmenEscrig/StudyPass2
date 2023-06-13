@@ -82,4 +82,9 @@ public class FlashCard {
     public void setSubject(Subject subject) {
         this.subject = subject;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + this.id + "       Subject: " + this.subject.getName() + "       " + this.question;
+    }
 }
