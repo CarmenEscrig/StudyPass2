@@ -14,7 +14,7 @@ public class AddCard extends JFrame{
 
     final JLabel lblTitulo = new JLabel("Study Pass");
 
-    final JLabel lblNombre = new JLabel("Pregunta  ");
+    final JLabel lblPregunta = new JLabel("Pregunta  ");
 
     final JTextField textNombre = new JTextField(50);
 
@@ -67,7 +67,7 @@ public class AddCard extends JFrame{
         btnExit.setBackground( new Color(187, 225, 251) );
         panel_1.add(Box.createVerticalStrut(30));
         panel_1.add(lblTitulo);
-        panel_2.add(lblNombre);
+        panel_2.add(lblPregunta);
         textNombre.setPreferredSize(new Dimension(70,70));
         panel_2.add(textNombre);
         panel_2.add(lblRespuesta);

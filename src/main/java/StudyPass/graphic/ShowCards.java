@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class ShowCards extends JFrame {
 
     final JLabel lblTitulo = new JLabel("Study Pass");
-    final JLabel lblNombre = new JLabel("Flashcards:");
+    final JLabel lblFlashCards = new JLabel("Flashcards:");
     FlashCard[] items;
     final JList<FlashCard> list;
     final JToolBar tool = new JToolBar();
@@ -43,12 +43,12 @@ public class ShowCards extends JFrame {
         panel.add(panel_3);
         setTitle("StudyPass");
         lblTitulo.setFont(new Font("Courier New", Font.BOLD, 40));
-        lblNombre.setFont(new Font("Courier New", Font.BOLD, 30));
+        lblFlashCards.setFont(new Font("Courier New", Font.BOLD, 30));
         list.setPreferredSize(new Dimension(500,120 + items.length * 10));
 
         panel_1.add(Box.createVerticalStrut(50));
         panel_1.add(lblTitulo);
-        panel_2.add(lblNombre);
+        panel_2.add(lblFlashCards);
         panel_3.add(tool);
         panel_3.add(new JScrollPane(list));
         panel_1.setBackground(new Color(242,247,255));

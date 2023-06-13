@@ -16,7 +16,7 @@ public class Register extends JFrame{
 
     final JTextField textNombre = new JTextField(50);
 
-    JLabel lblRespuesta = new JLabel("Password");
+    JLabel lblPassword = new JLabel("Password");
 
     JPasswordField textRespuesta = new JPasswordField(50);
 
@@ -96,7 +96,7 @@ public class Register extends JFrame{
         panel_3.add(lblNombre);
         textNombre.setPreferredSize(new Dimension(70,70));
         panel_3.add(textNombre);
-        panel_3.add(lblRespuesta);
+        panel_3.add(lblPassword);
         textRespuesta.setPreferredSize(new Dimension(70,70));
         panel_3.add(textRespuesta);
         panel_4.add(lblEtiqueta);
