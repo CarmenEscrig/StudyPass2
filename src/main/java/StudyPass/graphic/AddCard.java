@@ -79,6 +79,10 @@ public class AddCard extends JFrame{
         panel_4.add(btnAdd);
         panel_4.add(Box.createHorizontalStrut(100));
         panel_4.add(btnExit);
+        panel_1.setBackground(new Color(242,247,255));
+        panel_2.setBackground(new Color(242,247,255));
+        panel_3.setBackground(new Color(242,247,255));
+        panel_4.setBackground(new Color(242,247,255));
 
 
         btnAdd.addActionListener((e) -> {

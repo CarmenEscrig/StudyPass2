@@ -117,6 +117,12 @@ public class SolutionCard extends JFrame{
             panel_6.add(btnIncorrect);
         });
 
+        panel_1.setBackground(new Color(242,247,255));
+        panel_2.setBackground(new Color(242,247,255));
+        panel_3.setBackground(new Color(242,247,255));
+        panel_4.setBackground(new Color(242,247,255));
+        panel_5.setBackground(new Color(242,247,255));
+        panel_6.setBackground(new Color(242,247,255));
 
         setVisible(true);
     }

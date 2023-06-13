@@ -39,9 +39,9 @@ public class StudentMain extends JFrame {
         panel_3.add(tarjeta);
         panel_3.add(Box.createHorizontalStrut(350));
         panel_3.add(progreso);
-        panel_1.setBackground(Color.black);
-        panel_2.setBackground(Color.black);
-        panel_3.setBackground(Color.black);
+        panel_1.setBackground(new Color(242,247,255));
+        panel_2.setBackground(new Color(242,247,255));
+        panel_3.setBackground(new Color(242,247,255));
 
         estudiar.addActionListener((e) -> {
             SwingUtilities.invokeLater(new Runnable() {

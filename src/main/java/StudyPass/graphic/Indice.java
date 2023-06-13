@@ -36,8 +36,8 @@ public class Indice extends JFrame {
         panel_3.add(iniciar_sesion);
         panel_3.add(Box.createHorizontalStrut(350));
         panel_3.add(registrarse);
-        panel_1.setBackground(Color.black);
-        panel_3.setBackground(Color.black);
+        panel_1.setBackground(new Color(242,247,255));
+        panel_3.setBackground(new Color(242,247,255));
 
         iniciar_sesion.addActionListener((e) -> {
             try {
