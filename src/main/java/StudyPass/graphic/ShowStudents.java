@@ -1,6 +1,6 @@
 package StudyPass.graphic;
 
-import StudyPass.code.*;
+import StudyPass.defcode.*;
 import StudyPass.tests.Jajajajajjajaj;
 
 import javax.swing.*;

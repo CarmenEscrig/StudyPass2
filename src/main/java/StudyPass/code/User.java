@@ -1,3 +1,4 @@
+/*
 package StudyPass.code;
 
 import java.util.ArrayList;
@@ -89,3 +90,4 @@ public class User {
         this.subjects.add(subject);
     }
 }
+*/

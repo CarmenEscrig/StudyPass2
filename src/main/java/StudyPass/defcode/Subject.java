@@ -1,5 +1,4 @@
-/*
-package StudyPass.code;
+package StudyPass.defcode;
 
 import java.util.ArrayList;
 
@@ -64,4 +63,3 @@ public class Subject {
         this.flashCards.add(flashCard);
     }
 }
-*/

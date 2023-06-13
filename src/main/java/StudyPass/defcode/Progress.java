@@ -1,5 +1,4 @@
-/*
-package StudyPass.code;
+package StudyPass.defcode;
 
 public class Progress {
     private int id;
@@ -55,4 +54,3 @@ public class Progress {
         this.incorrect ++;
     }
 }
-*/

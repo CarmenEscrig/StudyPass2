@@ -1,5 +1,4 @@
-/*
-package StudyPass.code;
+package StudyPass.defcode;
 
 public class SocialNetworkService {
 
@@ -8,4 +7,3 @@ public class SocialNetworkService {
         return connection;
     }
 }
-*/

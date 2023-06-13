@@ -1,8 +1,8 @@
 package StudyPass.graphic;
 
-import StudyPass.code.FlashCard;
-import StudyPass.code.FlashRepositoryImpl;
-import StudyPass.code.Subject;
+import StudyPass.defcode.FlashCard;
+import StudyPass.defcode.FlashRepositoryImpl;
+import StudyPass.defcode.Subject;
 import StudyPass.tests.Jajajajajjajaj;
 
 import javax.swing.*;

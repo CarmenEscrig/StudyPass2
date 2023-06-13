@@ -1,5 +1,4 @@
-/*
-package StudyPass.code;
+package StudyPass.defcode;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -17,4 +16,3 @@ public interface IRepository<T> {
 
 
 }
-*/

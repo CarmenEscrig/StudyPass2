@@ -1,6 +1,6 @@
 package StudyPass.tests;
 
-import StudyPass.code.*;
+import StudyPass.defcode.*;
 
 import java.io.IOException;
 import java.sql.SQLException;

@@ -1,5 +1,4 @@
-/*
-package StudyPass.code;
+package StudyPass.defcode;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -89,4 +88,3 @@ public class FlashCard {
         return "ID: " + this.id + "       Subject: " + this.subject.getName() + "       " + this.question;
     }
 }
-*/

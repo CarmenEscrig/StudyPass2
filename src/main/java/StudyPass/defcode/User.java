@@ -1,8 +1,5 @@
 package StudyPass.defcode;
 
-import StudyPass.code.Progress;
-import StudyPass.code.Subject;
-
 import java.util.ArrayList;
 
 public class User {

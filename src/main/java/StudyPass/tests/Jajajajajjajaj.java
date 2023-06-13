@@ -1,8 +1,8 @@
 package StudyPass.tests;
 
-import StudyPass.code.Subject;
-import StudyPass.code.SubjectRepositoryImpl;
-import StudyPass.code.User;
+import StudyPass.defcode.Subject;
+import StudyPass.defcode.SubjectRepositoryImpl;
+import StudyPass.defcode.User;
 import StudyPass.graphic.Indice;
 
 import javax.swing.*;

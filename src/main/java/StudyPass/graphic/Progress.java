@@ -5,9 +5,10 @@ import StudyPass.tests.Jajajajajjajaj;
 import javax.swing.*;
 import java.awt.*;
 
+
 public class Progress extends JFrame {
 
-    StudyPass.code.Progress progress = Jajajajajjajaj.user.getProgress();
+    StudyPass.defcode.Progress progress = Jajajajajjajaj.user.getProgress();
 
     final JLabel titulo = new JLabel("Study Pass");
 

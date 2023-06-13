@@ -1,5 +1,7 @@
+/*
 package StudyPass.code;
 
+*/
 /**
  * @see <a href="https://stackoverflow.com/questions/6567839/if-i-use-a-singleton-class-for-a-database-connection-can-one-user-close-the-con">Stackoverflow Singleton</a>
  * Patron Singleton
@@ -15,7 +17,8 @@ package StudyPass.code;
  * - La propia clase es responsable de crear la única instancia.
  * - Permite el acceso global a dicha instancia mediante un método de clase.
  * - Declara el constructor de clase como privado para que no sea instanciable directamente.
- */
+ *//*
+
 public class DatabaseConnection
 {
     private static DatabaseConnection dbInstance; //Variable para almacenar la unica instancia de la clase
@@ -48,3 +51,4 @@ public class DatabaseConnection
         return con;
     }
 }
+*/
