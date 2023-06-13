@@ -9,7 +9,7 @@ public class Progress extends JFrame {
 
     StudyPass.code.Progress progress = Jajajajajjajaj.user.getProgress();
 
-    final JLabel titulo = new JLabel("Study Pass");
+    final JLabel lblTitulo = new JLabel("Study Pass");
 
     final JLabel lblNombre = new JLabel("Progreso:");
 
@@ -33,12 +33,12 @@ public class Progress extends JFrame {
         panel.add(panel_3);
         panel.add(panel_4);
         setTitle("StudyPass");
-        titulo.setFont(new Font("Courier New", Font.BOLD, 40));
+        lblTitulo.setFont(new Font("Courier New", Font.BOLD, 40));
         lblNombre.setFont(new Font("Courier New", Font.BOLD, 30));
         correctas.setFont(new Font("Courier New", Font.ITALIC, 20));
         incorrectas.setFont(new Font("Courier New", Font.ITALIC, 20));
         panel_1.add(Box.createVerticalStrut(50));
-        panel_1.add(titulo);
+        panel_1.add(lblTitulo);
         panel_2.add(lblNombre);
         panel_3.add(correctas);
         panel_4.add(incorrectas);

@@ -4,22 +4,21 @@ import StudyPass.code.User;
 import StudyPass.code.UserRepositoryImpl;
 import StudyPass.tests.Jajajajajjajaj;
 
-import javax.print.attribute.standard.JobPrioritySupported;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
 
 public class Register extends JFrame{
 
-    final JLabel titulo = new JLabel("Study Pass");
+    final JLabel lblTitulo = new JLabel("Study Pass");
 
     final JLabel lblNombre = new JLabel("Username");
 
-    final JTextField txtNombre = new JTextField(50);
+    final JTextField textNombre = new JTextField(50);
 
     JLabel lblRespuesta = new JLabel("Password");
 
-    JPasswordField txtRespuesta = new JPasswordField(50);
+    JPasswordField textRespuesta = new JPasswordField(50);
 
     String[] opciones = { "Estudiante", "Profesor" };
 
@@ -40,7 +39,7 @@ public class Register extends JFrame{
     final JButton btnAsignatura_5 = new JButton(Jajajajajjajaj.subjects.get(4).getName());
 
     final JButton btnAsignatura_6 = new JButton(Jajajajajjajaj.subjects.get(5).getName());
-    final JButton register = new JButton("Register");
+    final JButton btnRegister = new JButton("Register");
 
 
 
@@ -75,7 +74,7 @@ public class Register extends JFrame{
 
         setSize(700, 1030);
         setTitle("StudyPass");
-        titulo.setFont(new Font("Courier New", Font.BOLD, 40));
+        lblTitulo.setFont(new Font("Courier New", Font.BOLD, 40));
         lblAsignatura.setPreferredSize(new Dimension(210,50));
         btnAsignatura_1.setPreferredSize(new Dimension(150,50));
         btnAsignatura_1.setBackground( new Color(187, 225, 251) );
@@ -89,17 +88,17 @@ public class Register extends JFrame{
         btnAsignatura_5.setBackground( new Color(187, 225, 251) );
         btnAsignatura_6.setPreferredSize(new Dimension(150,50));
         btnAsignatura_6.setBackground( new Color(187, 225, 251) );
-        register.setPreferredSize(new Dimension(150,70));
-        register.setBackground( new Color(187, 225, 251) );
+        btnRegister.setPreferredSize(new Dimension(150,70));
+        btnRegister.setBackground( new Color(187, 225, 251) );
         panel_1.add(Box.createVerticalStrut(30));
-        panel_1.add(titulo);
+        panel_1.add(lblTitulo);
         panel_2.add(lblAsignatura);
         panel_3.add(lblNombre);
-        txtNombre.setPreferredSize(new Dimension(70,70));
-        panel_3.add(txtNombre);
+        textNombre.setPreferredSize(new Dimension(70,70));
+        panel_3.add(textNombre);
         panel_3.add(lblRespuesta);
-        txtRespuesta.setPreferredSize(new Dimension(70,70));
-        panel_3.add(txtRespuesta);
+        textRespuesta.setPreferredSize(new Dimension(70,70));
+        panel_3.add(textRespuesta);
         panel_4.add(lblEtiqueta);
         panel_4.add(cmbLista);
         panel_5.add(lblAsignatura);
@@ -109,7 +108,7 @@ public class Register extends JFrame{
         panel_7.add(btnAsignatura_4);
         panel_7.add(btnAsignatura_5);
         panel_7.add(btnAsignatura_6);
-        panel_8.add(register);
+        panel_8.add(btnRegister);
 
         panel_1.setBackground(new Color(242,247,255));
         panel_2.setBackground(new Color(242,247,255));
@@ -120,7 +119,7 @@ public class Register extends JFrame{
         panel_7.setBackground(new Color(242,247,255));
         panel_8.setBackground(new Color(242,247,255));
 
-        register.addActionListener((e) -> {
+        btnRegister.addActionListener((e) -> {
             registUser();
             setVisible(false);
             ;
@@ -131,8 +130,8 @@ public class Register extends JFrame{
     }
 
     public void registUser() {
-        String username = txtNombre.getText();
-        String password = txtRespuesta.getText();
+        String username = textNombre.getText();
+        String password = textRespuesta.getText();
         String type = cmbLista.getSelectedItem().toString().toLowerCase();
         User user = new User(username, password, type);
 

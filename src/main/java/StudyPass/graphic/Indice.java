@@ -9,9 +9,9 @@ import java.awt.*;
 import java.sql.SQLException;
 
 public class Indice extends JFrame {
-    final JLabel titulo = new JLabel("Study Pass");
-    final JButton iniciar_sesion = new JButton("Iniciar Sesion");
-    final JButton registrarse = new JButton("Registrarse");
+    final JLabel lblTitulo = new JLabel("Study Pass");
+    final JButton btnIniciarSesion = new JButton("Iniciar Sesion");
+    final JButton btnRegistrarse = new JButton("Registrarse");
 
     final Container panel = getContentPane();
     final JPanel panel_1 = new JPanel();
@@ -24,22 +24,22 @@ public class Indice extends JFrame {
         panel.add(panel_3);
         setSize(1960, 1080);
         setTitle("StudyPass");
-        titulo.setFont(new Font("Courier New", Font.BOLD, 80));
-        iniciar_sesion.setPreferredSize(new Dimension(450, 250));
-        iniciar_sesion.setBackground( new Color(187, 225, 251) );
-        iniciar_sesion.setFont(new Font("Courier New", Font.ITALIC, 40));
-        registrarse.setPreferredSize(new Dimension(450, 250));
-        registrarse.setFont(new Font("Courier New", Font.ITALIC, 40));
-        registrarse.setBackground( new Color(187, 225, 251) );
+        lblTitulo.setFont(new Font("Courier New", Font.BOLD, 80));
+        btnIniciarSesion.setPreferredSize(new Dimension(450, 250));
+        btnIniciarSesion.setBackground( new Color(187, 225, 251) );
+        btnIniciarSesion.setFont(new Font("Courier New", Font.ITALIC, 40));
+        btnRegistrarse.setPreferredSize(new Dimension(450, 250));
+        btnRegistrarse.setFont(new Font("Courier New", Font.ITALIC, 40));
+        btnRegistrarse.setBackground( new Color(187, 225, 251) );
         panel_1.add(Box.createVerticalStrut(150));
-        panel_1.add(titulo);
-        panel_3.add(iniciar_sesion);
+        panel_1.add(lblTitulo);
+        panel_3.add(btnIniciarSesion);
         panel_3.add(Box.createHorizontalStrut(350));
-        panel_3.add(registrarse);
+        panel_3.add(btnRegistrarse);
         panel_1.setBackground(new Color(242,247,255));
         panel_3.setBackground(new Color(242,247,255));
 
-        iniciar_sesion.addActionListener((e) -> {
+        btnIniciarSesion.addActionListener((e) -> {
             try {
                 login();
             } catch (SQLException ex) {
@@ -47,7 +47,7 @@ public class Indice extends JFrame {
             }
         });
 
-        registrarse.addActionListener((e) -> {
+        btnRegistrarse.addActionListener((e) -> {
             SwingUtilities.invokeLater(new Runnable() {
                 @Override
                 public void run() {

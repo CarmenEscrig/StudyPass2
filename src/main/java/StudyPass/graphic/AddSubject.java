@@ -9,7 +9,7 @@ public class AddSubject {
     JPanel panel = new JPanel();
     JComboBox<String> comboBox = new JComboBox<String>();
     DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>();
-    JTextField txtAdd = new JTextField(15);
+    JTextField textAdd = new JTextField(15);
     JButton btnAdd = new JButton("Add");
     JButton btnRemove = new JButton("Remove");
     String selectedValue;
@@ -28,13 +28,13 @@ public class AddSubject {
         });
 
         btnAdd.addActionListener((e) -> {
-            model.addElement(txtAdd.getText());
+            model.addElement(textAdd.getText());
             frame.pack();
         });
 
         btnAdd.setBackground( new Color(187, 225, 251) );
         btnRemove.setBackground( new Color(187, 225, 251) );
-        panel.add(txtAdd);
+        panel.add(textAdd);
         panel.add(btnAdd);
         panel.add(comboBox);
         panel.add(btnRemove);
