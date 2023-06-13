@@ -26,10 +26,13 @@ public class StudentMain extends JFrame {
         titulo.setFont(new Font("Courier New", Font.BOLD, 80));
         tarjeta.setPreferredSize(new Dimension(450,250));
         tarjeta.setFont(new Font("Courier New",Font.ITALIC,40));
+        tarjeta.setBackground( new Color(187, 225, 251) );
         estudiar.setPreferredSize(new Dimension(1265,350));
         estudiar.setFont(new Font("Courier New",Font.ITALIC,40));
+        estudiar.setBackground( new Color(187, 225, 251) );
         progreso.setPreferredSize(new Dimension(450,250));
         progreso.setFont(new Font("Courier New", Font.ITALIC, 40));
+        progreso.setBackground( new Color(187, 225, 251) );
         panel_1.add(Box.createVerticalStrut(150));
         panel_1.add(titulo);
         panel_2.add(estudiar);

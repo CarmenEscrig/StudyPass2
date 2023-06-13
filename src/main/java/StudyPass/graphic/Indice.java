@@ -26,9 +26,11 @@ public class Indice extends JFrame {
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 80));
         iniciar_sesion.setPreferredSize(new Dimension(450, 250));
+        iniciar_sesion.setBackground( new Color(187, 225, 251) );
         iniciar_sesion.setFont(new Font("Courier New", Font.ITALIC, 40));
         registrarse.setPreferredSize(new Dimension(450, 250));
         registrarse.setFont(new Font("Courier New", Font.ITALIC, 40));
+        registrarse.setBackground( new Color(187, 225, 251) );
         panel_1.add(Box.createVerticalStrut(150));
         panel_1.add(titulo);
         panel_3.add(iniciar_sesion);

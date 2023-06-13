@@ -26,10 +26,13 @@ public class ProfessorMain extends JFrame {
         titulo.setFont(new Font("Courier New", Font.BOLD, 80));
         showCards.setPreferredSize(new Dimension(450,250));
         showCards.setFont(new Font("Courier New",Font.ITALIC,40));
+        showCards.setBackground( new Color(187, 225, 251) );
         addCard.setPreferredSize(new Dimension(1265,350));
         addCard.setFont(new Font("Courier New",Font.ITALIC,40));
+        addCard.setBackground( new Color(187, 225, 251) );
         showStudents.setPreferredSize(new Dimension(450,250));
         showStudents.setFont(new Font("Courier New", Font.ITALIC, 40));
+        showStudents.setBackground( new Color(187, 225, 251) );
         panel_1.add(Box.createVerticalStrut(150));
         panel_1.add(titulo);
         panel_2.add(addCard);
