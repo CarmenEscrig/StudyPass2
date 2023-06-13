@@ -37,6 +37,7 @@ public class UserRepositoryImpl implements IRepository<User> {
     public ArrayList<User> findBySubject(Subject subject) throws SQLException {
         ArrayList<User> users = new ArrayList<>();
         PreparedStatement st = con.prepareStatement("SELECT * FROM user_subject where subjectid = ?");
+        st.setInt(1, subject.getId());
         ResultSet rs = st.executeQuery();
 
         while(rs.next()){

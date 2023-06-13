@@ -14,7 +14,7 @@ public class SubjectRepositoryImpl implements IRepository<Subject> {
     public SubjectRepositoryImpl(){
         this.con = SocialNetworkService.getConnection();
     }
-    private static Set<Subject> subjectCached = new HashSet<>();
+    public static Set<Subject> subjectCached = new HashSet<>();
 
     private static Set<Subject> subjectCached2 = new HashSet<>();
 
@@ -68,14 +68,7 @@ public class SubjectRepositoryImpl implements IRepository<Subject> {
 
             //Codigo user-subject
 
-            for (User user : subject.getUsers()) {
-                PreparedStatement st2 = con.prepareStatement("INSERT INTO user_subject (userid, subjectid) VALUES (?, ?)");
-                st2.setInt(1, user.getId());
-                st2.setInt(2, subject.getId());
 
-                st2.executeUpdate();
-
-            }
         }else{
             PreparedStatement st = con.prepareStatement("UPDATE subjects SET username = ? WHERE id = ?");
             st.setString(1, subject.getName());

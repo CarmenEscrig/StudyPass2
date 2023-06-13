@@ -24,6 +24,7 @@ public class Jajajajajjajaj {
     }
 
     public static void main(String[] args) throws SQLException, IOException {
+        SubjectRepositoryImpl.subjectCached.clear();
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override

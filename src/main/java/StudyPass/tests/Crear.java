@@ -48,7 +48,9 @@ public class Crear {
         subject4.addFlashCard(flashCard11);
         subject4.addFlashCard(flashCard12);
 
-
+        subject4.addUser(prof);
+        subject4.addUser(user);
+        subject1.addUser(prof);
 
 
         SubjectRepositoryImpl subjectRepository = new SubjectRepositoryImpl();
