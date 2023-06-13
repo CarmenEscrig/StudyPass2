@@ -68,6 +68,7 @@ public class QuestionCard extends JFrame{
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 40));
         btnShowAnswer.setPreferredSize(new Dimension(150,40));
+        btnShowAnswer.setBackground( new Color(187, 225, 251) );
         panel_1.add(Box.createVerticalStrut(30));
         panel_1.add(titulo);
         panel_3.add(lblNombre);

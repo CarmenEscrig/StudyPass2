@@ -62,7 +62,9 @@ public class AddCard extends JFrame{
         setTitle("StudyPass");
         titulo.setFont(new Font("Courier New", Font.BOLD, 40));
         btnAdd.setPreferredSize(new Dimension(250,50));
+        btnAdd.setBackground( new Color(187, 225, 251) );
         btnExit.setPreferredSize(new Dimension(250,50));
+        btnExit.setBackground( new Color(187, 225, 251) );
         panel_1.add(Box.createVerticalStrut(30));
         panel_1.add(titulo);
         panel_2.add(lblNombre);

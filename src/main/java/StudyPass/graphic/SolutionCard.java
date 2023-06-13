@@ -79,8 +79,11 @@ public class SolutionCard extends JFrame{
         titulo.setFont(new Font("Courier New", Font.BOLD, 40));
 
         btnShowAnswer.setPreferredSize(new Dimension(150,40));
+        btnShowAnswer.setBackground( new Color(187, 225, 251) );
         btnCorrect.setPreferredSize(new Dimension(150,40));
+        btnCorrect.setBackground( new Color(187, 225, 251) );
         btnIncorrect.setPreferredSize(new Dimension(150,40));
+        btnIncorrect.setBackground( new Color(187, 225, 251) );
 
 
         panel_1.add(Box.createVerticalStrut(30));

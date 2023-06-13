@@ -1,6 +1,7 @@
 package StudyPass.graphic;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ItemEvent;
 
 public class AddSubject {
@@ -31,6 +32,8 @@ public class AddSubject {
             frame.pack();
         });
 
+        btnAdd.setBackground( new Color(187, 225, 251) );
+        btnRemove.setBackground( new Color(187, 225, 251) );
         panel.add(txtAdd);
         panel.add(btnAdd);
         panel.add(comboBox);
