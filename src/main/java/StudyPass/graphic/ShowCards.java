@@ -7,7 +7,6 @@ import StudyPass.tests.Jajajajajjajaj;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -15,8 +14,8 @@ public class ShowCards extends JFrame {
 
     final JLabel titulo = new JLabel("Study Pass");
     final JLabel lblNombre = new JLabel("Flashcards:");
-    FlashCard[] items = new FlashCard[0];
-    final JList<FlashCard> list = new JList<>(items);
+    FlashCard[] items;
+    final JList<FlashCard> list;
     final JToolBar tool = new JToolBar();
 
 
@@ -32,7 +31,9 @@ public class ShowCards extends JFrame {
             flashCards.addAll(new FlashRepositoryImpl().findBySubject(s));
         }
 
-        items = (FlashCard[]) flashCards.toArray();
+        items = flashCards.toArray(new FlashCard[0]);
+
+        list = new JList<>(items);
 
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));

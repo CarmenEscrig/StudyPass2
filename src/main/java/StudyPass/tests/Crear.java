@@ -37,6 +37,17 @@ public class Crear {
 
         subject4.addFlashCard(flashCard);
         subject4.addFlashCard(flashCard2);
+        subject4.addFlashCard(flashCard3);
+        subject4.addFlashCard(flashCard4);
+        subject4.addFlashCard(flashCard5);
+        subject4.addFlashCard(flashCard6);
+        subject4.addFlashCard(flashCard7);
+        subject4.addFlashCard(flashCard8);
+        subject4.addFlashCard(flashCard9);
+        subject4.addFlashCard(flashCard10);
+        subject4.addFlashCard(flashCard11);
+        subject4.addFlashCard(flashCard12);
+
 
 
 

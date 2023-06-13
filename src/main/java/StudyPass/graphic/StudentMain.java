@@ -61,7 +61,7 @@ public class StudentMain extends JFrame {
                 @Override
                 public void run() {
                     try {
-                        new ShowStudents();
+                        new ShowCards();
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }

@@ -15,7 +15,7 @@ public class UserRepositoryImpl implements IRepository<User> {
         this.con = SocialNetworkService.getConnection();
     }
 
-    private Set<User> usersCached = new HashSet<>();
+    private static Set<User> usersCached = new HashSet<>();
     private User getUserCached(int i){
         for(User user : usersCached){
             if (user.getId() == i) return user;
@@ -36,7 +36,7 @@ public class UserRepositoryImpl implements IRepository<User> {
 
     public ArrayList<User> findBySubject(Subject subject) throws SQLException {
         ArrayList<User> users = new ArrayList<>();
-        PreparedStatement st = con.prepareStatement("SELECT * FROM flashcards where subjectid = ?");
+        PreparedStatement st = con.prepareStatement("SELECT * FROM user_subject where subjectid = ?");
         ResultSet rs = st.executeQuery();
 
         while(rs.next()){

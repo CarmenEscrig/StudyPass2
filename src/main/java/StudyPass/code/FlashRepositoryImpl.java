@@ -18,7 +18,7 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
         this.con = SocialNetworkService.getConnection();
     }
 
-    private Set<FlashCard> flashCardsCached = new HashSet<>();
+    private static Set<FlashCard> flashCardsCached = new HashSet<>();
     private FlashCard getFlashCardCached(int i){
         for(FlashCard flashCard : flashCardsCached){
             if (flashCard.getId() == i) return flashCard;
@@ -114,6 +114,7 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
     public ArrayList<FlashCard> findBySubject(Subject subject) throws SQLException {
         ArrayList<FlashCard> flashCards = new ArrayList<>();
         PreparedStatement st = con.prepareStatement("SELECT * FROM flashcards where subjectid = ?");
+        st.setInt(1, subject.getId());
         ResultSet rs = st.executeQuery();
 
         while(rs.next()){

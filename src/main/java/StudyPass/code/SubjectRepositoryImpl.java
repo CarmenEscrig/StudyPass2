@@ -14,10 +14,19 @@ public class SubjectRepositoryImpl implements IRepository<Subject> {
     public SubjectRepositoryImpl(){
         this.con = SocialNetworkService.getConnection();
     }
-    private Set<Subject> subjectCached = new HashSet<>();
+    private static Set<Subject> subjectCached = new HashSet<>();
+
+    private static Set<Subject> subjectCached2 = new HashSet<>();
 
     private Subject getSubjectCached(int i){
         for(Subject subject : subjectCached){
+            if (subject.getId() == i) return subject;
+        }
+        return null;
+    }
+
+    private Subject getSubjectCached2(int i){
+        for(Subject subject : subjectCached2){
             if (subject.getId() == i) return subject;
         }
         return null;
@@ -110,13 +119,26 @@ public class SubjectRepositoryImpl implements IRepository<Subject> {
         return new Subject(rs.getInt("id"), rs.getString("name"));
     }
 
+    public Subject findById(int id) throws SQLException {
+        PreparedStatement st = con.prepareStatement("SELECT * FROM subjects WHERE id = ? ");
+        st.setInt(1, id);
+
+        ResultSet rs = st.executeQuery();
+        Subject s = null;
+        if (rs.next()){
+            s = bdToEntity(rs);
+        }
+        return s;
+    }
+
     public ArrayList<Subject> findByUser(User user) throws SQLException{
         ArrayList<Subject> subjects = new ArrayList<>();
-        PreparedStatement st = con.prepareStatement("SELECT * FROM subjects where id = ?");
+        PreparedStatement st = con.prepareStatement("SELECT subjectid FROM user_subject where userid = ?");
+        st.setInt(1, user.getId());
         ResultSet rs = st.executeQuery();
 
         while(rs.next()){
-            Subject s =  bdToEntity(rs);
+            Subject s = findById(rs.getInt("subjectid"));
             subjects.add(s);
         }
         return subjects;
