@@ -12,15 +12,15 @@ import java.sql.SQLException;
 
 public class AddCard extends JFrame{
 
-    final JLabel titulo = new JLabel("Study Pass");
+    final JLabel lblTitulo = new JLabel("Study Pass");
 
-    final JLabel lblNombre = new JLabel("Pregunta  ");
+    final JLabel lblPregunta = new JLabel("Pregunta  ");
 
-    final JTextField txtNombre = new JTextField(50);
+    final JTextField textNombre = new JTextField(50);
 
     JLabel lblRespuesta = new JLabel("Respuesta");
 
-    JTextField txtRespuesta = new JTextField(50);
+    JTextField textRespuesta = new JTextField(50);
 
     String[] opciones = new String[Jajajajajjajaj.subjects.size()];
 
@@ -60,19 +60,19 @@ public class AddCard extends JFrame{
         panel.add(panel_4);
         setSize(700, 600);
         setTitle("StudyPass");
-        titulo.setFont(new Font("Courier New", Font.BOLD, 40));
+        lblTitulo.setFont(new Font("Courier New", Font.BOLD, 40));
         btnAdd.setPreferredSize(new Dimension(250,50));
         btnAdd.setBackground( new Color(187, 225, 251) );
         btnExit.setPreferredSize(new Dimension(250,50));
         btnExit.setBackground( new Color(187, 225, 251) );
         panel_1.add(Box.createVerticalStrut(30));
-        panel_1.add(titulo);
-        panel_2.add(lblNombre);
-        txtNombre.setPreferredSize(new Dimension(70,70));
-        panel_2.add(txtNombre);
+        panel_1.add(lblTitulo);
+        panel_2.add(lblPregunta);
+        textNombre.setPreferredSize(new Dimension(70,70));
+        panel_2.add(textNombre);
         panel_2.add(lblRespuesta);
-        txtRespuesta.setPreferredSize(new Dimension(70,70));
-        panel_2.add(txtRespuesta);
+        textRespuesta.setPreferredSize(new Dimension(70,70));
+        panel_2.add(textRespuesta);
         panel_3.add(Box.createVerticalStrut(80));
         panel_3.add(lblEtiqueta);
         panel_3.add(cmbLista);
@@ -88,7 +88,7 @@ public class AddCard extends JFrame{
         btnAdd.addActionListener((e) -> {
             FlashRepositoryImpl flashRepository = new FlashRepositoryImpl();
             Subject subject = new Subject();
-            FlashCard flashCard = new FlashCard(txtNombre.getText(), txtRespuesta.getText(), subject);
+            FlashCard flashCard = new FlashCard(textNombre.getText(), textRespuesta.getText(), subject);
             for (int i = 0; i < Jajajajajjajaj.subjects.size(); i++) {
                 if (Jajajajajjajaj.subjects.get(i).getName().equals(cmbLista.getSelectedItem())) {
                     subject = Jajajajajjajaj.subjects.get(i);

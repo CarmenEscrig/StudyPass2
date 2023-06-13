@@ -15,7 +15,7 @@ public class SolutionCard extends JFrame{
 
     FlashCard flashCard;
 
-    final JLabel titulo = new JLabel("Study Pass");
+    final JLabel lblTitulo = new JLabel("Study Pass");
 
     final JLabel jLabQuestion = new JLabel("Pregunta: ");
 
@@ -23,7 +23,7 @@ public class SolutionCard extends JFrame{
 
     final JLabel jLabYourAnswer = new JLabel("Your Answer: ");
 
-    final JTextField txtRespuesta = new JTextField(50);
+    final JTextField textRespuesta = new JTextField(50);
 
     final JLabel jLabAnswer = new JLabel("Answer: ");
 
@@ -76,7 +76,7 @@ public class SolutionCard extends JFrame{
 
         setSize(700, 850);
         setTitle("StudyPass");
-        titulo.setFont(new Font("Courier New", Font.BOLD, 40));
+        lblTitulo.setFont(new Font("Courier New", Font.BOLD, 40));
 
         btnShowAnswer.setPreferredSize(new Dimension(150,40));
         btnShowAnswer.setBackground( new Color(187, 225, 251) );
@@ -87,7 +87,7 @@ public class SolutionCard extends JFrame{
 
 
         panel_1.add(Box.createVerticalStrut(30));
-        panel_1.add(titulo);
+        panel_1.add(lblTitulo);
 
         panel_2.add(lblEtiqueta);
         panel_2.add(cmbLista);
@@ -96,8 +96,8 @@ public class SolutionCard extends JFrame{
         panel_3.add(jLabQuestionText);
 
         panel_4.add(jLabYourAnswer);
-        txtRespuesta.setPreferredSize(new Dimension(70,70));
-        panel_4.add(txtRespuesta);
+        textRespuesta.setPreferredSize(new Dimension(70,70));
+        panel_4.add(textRespuesta);
 
 
         panel_6.add(btnShowAnswer);

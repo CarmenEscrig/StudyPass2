@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ShowStudents extends JFrame {
 
-    final JLabel titulo = new JLabel("Study Pass");
+    final JLabel lblTitulo = new JLabel("Study Pass");
     final JLabel lblNombre = new JLabel("Estudiantes:");
     User[] items;
     final JList<User> list = new JList<>(items);
@@ -42,12 +42,12 @@ public class ShowStudents extends JFrame {
         panel.add(panel_2);
         panel.add(panel_3);
         setTitle("StudyPass");
-        titulo.setFont(new Font("Courier New", Font.BOLD, 40));
+        lblTitulo.setFont(new Font("Courier New", Font.BOLD, 40));
         lblNombre.setFont(new Font("Courier New", Font.BOLD, 30));
         list.setPreferredSize(new Dimension(500,120 + items.length * 10));
 
         panel_1.add(Box.createVerticalStrut(50));
-        panel_1.add(titulo);
+        panel_1.add(lblTitulo);
         panel_2.add(lblNombre);
         panel_3.add(tool);
         panel_3.add(new JScrollPane(list));
