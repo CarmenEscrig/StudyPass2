@@ -1,6 +1,6 @@
 package StudyPass.graphic;
 
-import StudyPass.tests.Jajajajajjajaj;
+import StudyPass.Main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class Progress extends JFrame {
 
-    StudyPass.defcode.Progress progress = Jajajajajjajaj.user.getProgress();
+    StudyPass.defcode.Progress progress = Main.user.getProgress();
 
     final JLabel lblTitulo = new JLabel("Study Pass");
 

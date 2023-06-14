@@ -1,12 +1,7 @@
 package StudyPass.graphic;
 
-import StudyPass.defcode.User;
-import StudyPass.defcode.UserRepositoryImpl;
-import StudyPass.tests.Jajajajajjajaj;
-
 import javax.swing.*;
 import java.awt.*;
-import java.sql.SQLException;
 
 public class Indice extends JFrame {
     final JLabel lblTitulo = new JLabel("Study Pass");
