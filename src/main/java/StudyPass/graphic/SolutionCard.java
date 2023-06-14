@@ -174,7 +174,7 @@ public class SolutionCard extends JFrame{
                     break;
                 }
             }
-        } while (esAsignatura == false);
+        } while (!esAsignatura);
 
         jLabQuestionText.setText(flashCard.getQuestion());
 
