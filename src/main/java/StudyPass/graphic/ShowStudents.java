@@ -56,11 +56,21 @@ public class ShowStudents extends JFrame {
 
     public void completeTable() throws SQLException {
 
+        boolean add = true;
+
         for (Subject s : Jajajajajjajaj.user.getSubjects()) {
             for (User u : new UserRepositoryImpl().findBySubject(s)) {
                 if (u.getType().equals("estudiante")) {
-                    Object[] newRow = {u.getId(), u.getUsername(), u.getProgress().getCorrect(), u.getProgress().getIncorrect()};
-                    tableModel.addRow(newRow);
+                    for (int i = 0; i < tableModel.getRowCount(); i++) {
+                        if (tableModel.getValueAt(i, 0).equals(u.getId())) {
+                            add = false;
+                            break;
+                        }
+                    }
+                    if (add) {
+                        Object[] newRow = {u.getId(), u.getUsername(), u.getProgress().getCorrect(), u.getProgress().getIncorrect()};
+                        tableModel.addRow(newRow);
+                    }
                 }
             }
         }
