@@ -7,6 +7,7 @@ import StudyPass.tests.Jajajajajjajaj;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 public class Register extends JFrame{
 
@@ -122,7 +123,6 @@ public class Register extends JFrame{
         btnRegister.addActionListener((e) -> {
             registUser();
             setVisible(false);
-            ;
         });
 
         setVisible(true);
@@ -131,7 +131,7 @@ public class Register extends JFrame{
 
     public void registUser() {
         String username = textNombre.getText();
-        String password = textRespuesta.getText();
+        String password = Arrays.toString(textRespuesta.getPassword());
         String type = cmbLista.getSelectedItem().toString().toLowerCase();
         User user = new User(username, password, type);
 

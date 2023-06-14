@@ -39,50 +39,11 @@ public class Indice extends JFrame {
         panel_1.setBackground(new Color(242,247,255));
         panel_3.setBackground(new Color(242,247,255));
 
-        btnIniciarSesion.addActionListener((e) -> {
-            try {
-                login();
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-        });
+        btnIniciarSesion.addActionListener((e) -> SwingUtilities.invokeLater(Login::new));
 
         btnRegistrarse.addActionListener((e) -> SwingUtilities.invokeLater(Register::new));
 
         setVisible(true);
     }
 
-    public void login() throws SQLException {
-        String user = JOptionPane.showInputDialog(null, "user");
-        String password = JOptionPane.showInputDialog(null, "password");
-        UserRepositoryImpl userRepository = new UserRepositoryImpl();
-        for (User u : userRepository.findAll()) {
-            if (user.equals(u.getUsername()) && password.equals(u.getPassword())) {
-                JOptionPane.showMessageDialog(null, "login ok");
-                Jajajajajjajaj.user = u;
-                if (u.getType().equals("estudiante")) {
-                    SwingUtilities.invokeLater(StudentMain::new);
-                } else {
-                    SwingUtilities.invokeLater(ProfessorMain::new);
-                }
-                setVisible(false);
-                break;
-            }
-        }
-        if (isVisible()) {
-            JOptionPane.showMessageDialog(null, "login failed");
-        }
-
-
-
-    /*public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-
-            @Override
-            public void run() {
-                new Login();
-            }
-        });
-    }*/
-    }
 }
