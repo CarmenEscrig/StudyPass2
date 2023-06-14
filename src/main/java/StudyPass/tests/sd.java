@@ -1,11 +1,10 @@
-package org.example;
+package StudyPass.tests;
 
-import java.awt.Color;
 import java.awt.Container;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-public class Indice extends JFrame {
+public class sd extends JFrame {
 
     String[] names = {"Nombre", "Apellido"};
     Object[][] hjasfjipjioasdfjp = {
@@ -13,8 +12,9 @@ public class Indice extends JFrame {
     };
     DefaultTableModel tableModel = new DefaultTableModel(hjasfjipjioasdfjp, names);
     JTable table = new JTable(tableModel);
+    JScrollPane scrollPane = new JScrollPane(table);
 
-    public Indice() {
+    public sd() {
 
         setTitle("DATOS");
         setSize(300, 200);
@@ -36,7 +36,7 @@ public class Indice extends JFrame {
         panel.add(txtNombre);
         panel.add(lblEdad);
         panel.add(txtEdad);
-        panel.add(table);
+        panel.add(scrollPane);
 
         contentpane.add(panel);
 
@@ -48,7 +48,7 @@ public class Indice extends JFrame {
 
             @Override
             public void run() {
-                new Indice();
+                new sd();
             }
         });
     }

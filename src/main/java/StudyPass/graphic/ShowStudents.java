@@ -1,19 +1,24 @@
 package StudyPass.graphic;
 
-import StudyPass.defcode.*;
+import StudyPass.defcode.Subject;
+import StudyPass.defcode.User;
+import StudyPass.defcode.UserRepositoryImpl;
 import StudyPass.tests.Jajajajajjajaj;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class ShowStudents extends JFrame {
 
     final JLabel lblTitulo = new JLabel("Study Pass");
     final JLabel lblNombre = new JLabel("Estudiantes:");
-    User[] items;
-    final JList<User> list;
+    String[] names = {"ID" , "Username" , "Correctas", "Incorrectas"};
+
+    DefaultTableModel tableModel = new DefaultTableModel(names, 0);
+
+    JTable table = new JTable(tableModel);
     final JToolBar tool = new JToolBar();
 
 
@@ -24,19 +29,9 @@ public class ShowStudents extends JFrame {
 
     public ShowStudents() throws SQLException {
 
-        ArrayList<User> users = new ArrayList<>();
-        for (Subject s : Jajajajajjajaj.user.getSubjects()) {
-            for (User u : new UserRepositoryImpl().findBySubject(s)) {
-                if (u.getType().equals("estudiante")) {
-                    users.add(u);
-                }
-            }
-        }
+        completeTable();
 
-        items = users.toArray(new User[0]);
-
-        list = new JList<>(items);
-
+        table.setPreferredScrollableViewportSize(new Dimension(550, 100));
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         setSize(600, 750);
@@ -46,18 +41,29 @@ public class ShowStudents extends JFrame {
         setTitle("StudyPass");
         lblTitulo.setFont(new Font("Courier New", Font.BOLD, 40));
         lblNombre.setFont(new Font("Courier New", Font.BOLD, 30));
-        list.setPreferredSize(new Dimension(500,120 + items.length * 10));
 
         panel_1.add(Box.createVerticalStrut(50));
         panel_1.add(lblTitulo);
         panel_2.add(lblNombre);
         panel_3.add(tool);
-        panel_3.add(new JScrollPane(list));
+        panel_3.add(new JScrollPane(table));
         panel_1.setBackground(new Color(242,247,255));
         panel_2.setBackground(new Color(242,247,255));
         panel_3.setBackground(new Color(242,247,255));
 
         setVisible(true);
+    }
+
+    public void completeTable() throws SQLException {
+
+        for (Subject s : Jajajajajjajaj.user.getSubjects()) {
+            for (User u : new UserRepositoryImpl().findBySubject(s)) {
+                if (u.getType().equals("estudiante")) {
+                    Object[] newRow = {u.getId(), u.getUsername(), u.getProgress().getCorrect(), u.getProgress().getIncorrect()};
+                    tableModel.addRow(newRow);
+                }
+            }
+        }
     }
 
 }
