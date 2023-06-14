@@ -2,7 +2,6 @@ package StudyPass.graphic;
 
 import StudyPass.defcode.FlashCard;
 import StudyPass.defcode.FlashRepositoryImpl;
-import StudyPass.defcode.Subject;
 import StudyPass.tests.Jajajajajjajaj;
 
 import javax.swing.*;
@@ -24,7 +23,7 @@ public class AddCard extends JFrame{
 
     String[] opciones = new String[Jajajajajjajaj.subjects.size()];
 
-    final JComboBox<String> cmbLista = new JComboBox<String>(opciones);
+    final JComboBox<String> cmbLista;
 
     final JLabel lblEtiqueta = new JLabel("Asignatura: ");
 
@@ -52,6 +51,8 @@ public class AddCard extends JFrame{
         for (int i = 0; i < opciones.length; i++) {
             opciones[i] = Jajajajajjajaj.subjects.get(i).getName();
         }
+
+        cmbLista = new JComboBox<>(opciones);
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(panel_1);
@@ -87,27 +88,26 @@ public class AddCard extends JFrame{
 
         btnAdd.addActionListener((e) -> {
             FlashRepositoryImpl flashRepository = new FlashRepositoryImpl();
-            Subject subject = new Subject();
-            FlashCard flashCard = new FlashCard(textNombre.getText(), textRespuesta.getText(), subject);
+            FlashCard flashCard = new FlashCard(textNombre.getText(), textRespuesta.getText());
             for (int i = 0; i < Jajajajajjajaj.subjects.size(); i++) {
                 if (Jajajajajjajaj.subjects.get(i).getName().equals(cmbLista.getSelectedItem())) {
-                    subject = Jajajajajjajaj.subjects.get(i);
+                    flashCard.setSubject(Jajajajajjajaj.subjects.get(i));
+                    break;
                 }
             }
-
             try {
                 flashRepository.save(flashCard);
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
+                JOptionPane.showMessageDialog(null, "Flashcard añadida con exito");
+            } catch (SQLException | IOException ex) {
+                JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
             }
 
+            textNombre.setText("");
+            textRespuesta.setText("");
+
         });
 
-        btnExit.addActionListener((e) -> {
-            setVisible(false);
-        });
+        btnExit.addActionListener((e) -> setVisible(false));
 
 
         setVisible(true);

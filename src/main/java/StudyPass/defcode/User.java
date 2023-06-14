@@ -88,4 +88,9 @@ public class User {
     public void addSubject(Subject subject) {
         this.subjects.add(subject);
     }
+
+    @Override
+    public String toString() {
+        return this.username + "          ID: " + this.id + "                            Correctas: " + this.progress.getCorrect() + "  Incorrectas: " + this.progress.getIncorrect();
+    }
 }
