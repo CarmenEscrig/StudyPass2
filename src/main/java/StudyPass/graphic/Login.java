@@ -18,7 +18,7 @@ public class Login extends JFrame {
 
     JPasswordField textRespuesta = new JPasswordField(15);
 
-    final JButton btnRegister = new JButton("Iniciar Sesion");
+    final JButton btnIniciarSesion = new JButton("Iniciar Sesion");
     final Container panel = getContentPane();
 
     final JPanel panel_1 = new JPanel();
@@ -28,13 +28,15 @@ public class Login extends JFrame {
         panel.add(panel_1);
         setSize(300, 125);
         setTitle("StudyPass");
+        panel.setBackground(new Color(242,247,255));
+        btnIniciarSesion.setBackground( new Color(187, 225, 251) );
         panel_1.add(lblNombre);
         panel_1.add(textNombre);
         panel_1.add(lblPassword);
         panel_1.add(textRespuesta);
-        panel_1.add(btnRegister);
+        panel_1.add(btnIniciarSesion);
 
-        btnRegister.addActionListener((e) -> {
+        btnIniciarSesion.addActionListener((e) -> {
             try {
                 login();
             } catch (SQLException ex) {
