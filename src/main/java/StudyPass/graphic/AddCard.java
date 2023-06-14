@@ -21,7 +21,7 @@ public class AddCard extends JFrame{
 
     JTextField textRespuesta = new JTextField(50);
 
-    String[] opciones = new String[Jajajajajjajaj.subjects.size()];
+    String[] opciones = new String[Jajajajajjajaj.user.getSubjects().size()];
 
     final JComboBox<String> cmbLista;
 
@@ -49,7 +49,7 @@ public class AddCard extends JFrame{
     public AddCard() {
 
         for (int i = 0; i < opciones.length; i++) {
-            opciones[i] = Jajajajajjajaj.subjects.get(i).getName();
+            opciones[i] = Jajajajajjajaj.user.getSubjects().get(i).getName();
         }
 
         cmbLista = new JComboBox<>(opciones);
