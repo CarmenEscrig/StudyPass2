@@ -28,7 +28,7 @@ public class Login extends JFrame {
         panel.add(panel_1);
         setSize(300, 125);
         setTitle("StudyPass");
-        panel.setBackground(new Color(242,247,255));
+        panel_1.setBackground(new Color(242,247,255));
         btnIniciarSesion.setBackground( new Color(187, 225, 251) );
         panel_1.add(lblNombre);
         panel_1.add(textNombre);
