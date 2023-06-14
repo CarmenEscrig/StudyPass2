@@ -121,6 +121,24 @@ public class Crear {
         flashRepository.save(flashCard10);
         flashRepository.save(flashCard11);
         flashRepository.save(flashCard12);
+        flashRepository.save(flashCard13);
+        flashRepository.save(flashCard14);
+        flashRepository.save(flashCard15);
+        flashRepository.save(flashCard16);
+        flashRepository.save(flashCard17);
+        flashRepository.save(flashCard18);
+        flashRepository.save(flashCard19);
+        flashRepository.save(flashCard20);
+        flashRepository.save(flashCard21);
+        flashRepository.save(flashCard22);
+        flashRepository.save(flashCard23);
+        flashRepository.save(flashCard24);
+        flashRepository.save(flashCard25);
+        flashRepository.save(flashCard26);
+        flashRepository.save(flashCard27);
+        flashRepository.save(flashCard28);
+        flashRepository.save(flashCard29);
+        flashRepository.save(flashCard30);
 
         UserRepositoryImpl userRepository = new UserRepositoryImpl();
         userRepository.save(user);
