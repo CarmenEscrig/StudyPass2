@@ -43,47 +43,28 @@ public class ProfessorMain extends JFrame {
         panel_2.setBackground(new Color(242,247,255));
         panel_3.setBackground(new Color(242,247,255));
 
-        btnAddCard.addActionListener((e) -> {
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    new AddCard();
-                }
-            });
-        });
+        btnAddCard.addActionListener((e) -> SwingUtilities.invokeLater(AddCard::new));
 
-        btnShowCards.addActionListener((e) -> {
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        new ShowStudents();
-                    } catch (SQLException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }
-            });
-        });
+        btnShowCards.addActionListener((e) -> SwingUtilities.invokeLater(() -> {
+            try {
+                new ShowCards();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        }));
 
-        btnShowStudents.addActionListener((e) -> {
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    new Progress();
-                }
-            });
-        });
+        btnShowStudents.addActionListener((e) -> SwingUtilities.invokeLater(() -> {
+            try {
+                new ShowStudents();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        }));
 
 
         setVisible(true);
     }
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-
-            @Override
-            public void run() {
-                new ProfessorMain();
-            }
-        });
+        SwingUtilities.invokeLater(ProfessorMain::new);
     }
 }

@@ -13,7 +13,7 @@ public class ShowStudents extends JFrame {
     final JLabel lblTitulo = new JLabel("Study Pass");
     final JLabel lblNombre = new JLabel("Estudiantes:");
     User[] items;
-    final JList<User> list = new JList<>(items);
+    final JList<User> list;
     final JToolBar tool = new JToolBar();
 
 
@@ -33,7 +33,9 @@ public class ShowStudents extends JFrame {
             }
         }
 
-        items = (User[]) users.toArray();
+        items = users.toArray(new User[0]);
+
+        list = new JList<>(items);
 
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));

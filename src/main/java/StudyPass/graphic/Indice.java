@@ -47,14 +47,7 @@ public class Indice extends JFrame {
             }
         });
 
-        btnRegistrarse.addActionListener((e) -> {
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    new Register();
-                }
-            });
-        });
+        btnRegistrarse.addActionListener((e) -> SwingUtilities.invokeLater(Register::new));
 
         setVisible(true);
     }
@@ -68,26 +61,16 @@ public class Indice extends JFrame {
                 JOptionPane.showMessageDialog(null, "login ok");
                 Jajajajajjajaj.user = u;
                 if (u.getType().equals("estudiante")) {
-                    SwingUtilities.invokeLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            new StudentMain();
-                        }
-                    });
+                    SwingUtilities.invokeLater(StudentMain::new);
                 } else {
-                    SwingUtilities.invokeLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            new ProfessorMain();
-                        }
-                    });
+                    SwingUtilities.invokeLater(ProfessorMain::new);
                 }
                 setVisible(false);
                 break;
             }
+        }
+        if (isVisible()) {
             JOptionPane.showMessageDialog(null, "login failed");
-
-
         }
 
 
