@@ -10,7 +10,7 @@ import java.awt.*;
 import java.sql.SQLException;
 
 public class SolutionCard extends JFrame{
-    private int cont = 5;
+    private int cont = 4;
     FlashRepositoryImpl flashRepository = new FlashRepositoryImpl();
 
     FlashCard flashCard;
