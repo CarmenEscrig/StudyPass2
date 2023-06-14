@@ -44,10 +44,11 @@ public class FlashCard {
     }
 
     public void transformToFile() throws IOException {
-        File file = new File("src/main/resources/FlashCards/" + this.id + ".txt");
+        File file = new File("src/main/resources/FlashCards/" + this.id + ".csv");
         file.createNewFile();
 
         PrintWriter printWriter = new PrintWriter(new FileWriter(file));
+        printWriter.print("ID@Question@Answer@SubjectID");
         printWriter.print(this.id + "@");
         printWriter.print(this.question + "@");
         printWriter.print(this.answer + "@");
@@ -58,7 +59,7 @@ public class FlashCard {
 
     public int getId() {
         return id;
-    }
+    }1
 
     public void setId(int id) {
         this.id = id;
