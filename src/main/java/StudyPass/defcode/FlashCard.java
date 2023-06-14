@@ -59,7 +59,7 @@ public class FlashCard {
 
     public int getId() {
         return id;
-    }1
+    }
 
     public void setId(int id) {
         this.id = id;
