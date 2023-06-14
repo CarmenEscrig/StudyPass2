@@ -120,11 +120,11 @@ public class SolutionCard extends JFrame{
         });
 
         btnCorrect.addActionListener((e) -> {
+            Jajajajajjajaj.user.getProgress().increaseCorrect();
             if (cont == 0) {
                 setVisible(false);
             } else {
                 cont --;
-                Jajajajajjajaj.user.getProgress().increaseCorrect();
                 btnCorrect.setVisible(false);
                 btnIncorrect.setVisible(false);
                 btnShowAnswer.setVisible(true);
@@ -140,11 +140,11 @@ public class SolutionCard extends JFrame{
         });
 
         btnIncorrect.addActionListener((e) -> {
+            Jajajajajjajaj.user.getProgress().increaseIncorrect();
             if (cont == 0) {
                 setVisible(false);
             } else {
                 cont --;
-                Jajajajajjajaj.user.getProgress().increaseIncorrect();
                 btnCorrect.setVisible(false);
                 btnIncorrect.setVisible(false);
                 btnShowAnswer.setVisible(true);
