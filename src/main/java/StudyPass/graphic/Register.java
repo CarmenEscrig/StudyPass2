@@ -36,9 +36,9 @@ public class Register extends JFrame{
 
     final JToggleButton btnAsignatura_4 = new JToggleButton(Jajajajajjajaj.subjects.get(3).getName());
 
-    final JButton btnAsignatura_5 = new JButton(Jajajajajjajaj.subjects.get(4).getName());
+    final JToggleButton btnAsignatura_5 = new JToggleButton(Jajajajajjajaj.subjects.get(4).getName());
 
-    final JButton btnAsignatura_6 = new JButton(Jajajajajjajaj.subjects.get(5).getName());
+    final JToggleButton btnAsignatura_6 = new JToggleButton(Jajajajajjajaj.subjects.get(5).getName());
     final JButton btnRegister = new JButton("Register");
 
 
