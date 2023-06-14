@@ -2,7 +2,7 @@ package StudyPass.graphic;
 
 import StudyPass.defcode.FlashCard;
 import StudyPass.defcode.FlashRepositoryImpl;
-import StudyPass.tests.Jajajajajjajaj;
+import StudyPass.Main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +21,7 @@ public class AddCard extends JFrame{
 
     JTextField textRespuesta = new JTextField(50);
 
-    String[] opciones = new String[Jajajajajjajaj.user.getSubjects().size()];
+    String[] opciones = new String[Main.user.getSubjects().size()];
 
     final JComboBox<String> cmbLista;
 
@@ -49,7 +49,7 @@ public class AddCard extends JFrame{
     public AddCard() {
 
         for (int i = 0; i < opciones.length; i++) {
-            opciones[i] = Jajajajajjajaj.user.getSubjects().get(i).getName();
+            opciones[i] = Main.user.getSubjects().get(i).getName();
         }
 
         cmbLista = new JComboBox<>(opciones);
@@ -89,9 +89,9 @@ public class AddCard extends JFrame{
         btnAdd.addActionListener((e) -> {
             FlashRepositoryImpl flashRepository = new FlashRepositoryImpl();
             FlashCard flashCard = new FlashCard(textNombre.getText(), textRespuesta.getText());
-            for (int i = 0; i < Jajajajajjajaj.subjects.size(); i++) {
-                if (Jajajajajjajaj.subjects.get(i).getName().equals(cmbLista.getSelectedItem())) {
-                    flashCard.setSubject(Jajajajajjajaj.subjects.get(i));
+            for (int i = 0; i < Main.subjects.size(); i++) {
+                if (Main.subjects.get(i).getName().equals(cmbLista.getSelectedItem())) {
+                    flashCard.setSubject(Main.subjects.get(i));
                     break;
                 }
             }

@@ -3,7 +3,7 @@ package StudyPass.graphic;
 import StudyPass.defcode.Subject;
 import StudyPass.defcode.User;
 import StudyPass.defcode.UserRepositoryImpl;
-import StudyPass.tests.Jajajajajjajaj;
+import StudyPass.Main;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -58,7 +58,7 @@ public class ShowStudents extends JFrame {
 
         boolean add = true;
 
-        for (Subject s : Jajajajajjajaj.user.getSubjects()) {
+        for (Subject s : Main.user.getSubjects()) {
             for (User u : new UserRepositoryImpl().findBySubject(s)) {
                 if (u.getType().equals("estudiante")) {
                     for (int i = 0; i < tableModel.getRowCount(); i++) {

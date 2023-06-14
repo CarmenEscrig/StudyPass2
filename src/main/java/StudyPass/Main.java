@@ -1,4 +1,4 @@
-package StudyPass.tests;
+package StudyPass;
 
 import StudyPass.defcode.Subject;
 import StudyPass.defcode.SubjectRepositoryImpl;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Jajajajajjajaj {
+public class Main {
 
     public static User user;
     public static ArrayList<Subject> subjects;

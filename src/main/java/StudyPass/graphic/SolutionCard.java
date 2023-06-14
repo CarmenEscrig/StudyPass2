@@ -3,7 +3,7 @@ package StudyPass.graphic;
 import StudyPass.defcode.FlashCard;
 import StudyPass.defcode.FlashRepositoryImpl;
 import StudyPass.defcode.Subject;
-import StudyPass.tests.Jajajajajjajaj;
+import StudyPass.Main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -120,7 +120,7 @@ public class SolutionCard extends JFrame{
         });
 
         btnCorrect.addActionListener((e) -> {
-            Jajajajajjajaj.user.getProgress().increaseCorrect();
+            Main.user.getProgress().increaseCorrect();
             if (cont == 0) {
                 setVisible(false);
             } else {
@@ -140,7 +140,7 @@ public class SolutionCard extends JFrame{
         });
 
         btnIncorrect.addActionListener((e) -> {
-            Jajajajajjajaj.user.getProgress().increaseIncorrect();
+            Main.user.getProgress().increaseIncorrect();
             if (cont == 0) {
                 setVisible(false);
             } else {
@@ -168,7 +168,7 @@ public class SolutionCard extends JFrame{
 
         do {
             flashCard = flashRepository.randomCard();
-            for(Subject s : Jajajajajjajaj.user.getSubjects()) {
+            for(Subject s : Main.user.getSubjects()) {
                 if (flashCard.getSubject().getId() == s.getId()) {
                     esAsignatura = true;
                     break;
