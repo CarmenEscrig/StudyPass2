@@ -44,7 +44,7 @@ public class ProgressRepositoryImpl implements IRepository<Progress> {
         }else{
             PreparedStatement st = con.prepareStatement("UPDATE progress SET correct = ?, incorrect = ? WHERE id = ?");
             st.setInt(1, progress.getCorrect());
-            st.setInt(2, progress.getCorrect());
+            st.setInt(2, progress.getIncorrect());
             st.setInt(3, progress.getId());
 
             st.executeUpdate();
