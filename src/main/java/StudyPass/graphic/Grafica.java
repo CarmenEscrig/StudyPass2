@@ -35,7 +35,7 @@ public class Grafica extends JPanel {
     }
 
     private Color obtenerColor(int indice) {
-        Color[] colores = {Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.MAGENTA};
+        Color[] colores = {Color.GREEN, Color.RED, Color.BLUE, Color.YELLOW, Color.MAGENTA};
         int index = indice % colores.length;
         return colores[index];
     }
