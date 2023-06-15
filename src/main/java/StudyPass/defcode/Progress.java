@@ -1,6 +1,7 @@
 package StudyPass.defcode;
 
 import java.sql.SQLException;
+//Esta es la clase que hace el progreso
 
 public class Progress {
     private int id;
