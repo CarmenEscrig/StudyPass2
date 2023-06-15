@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+//Esta son las tarjetas
 public class FlashCard {
     private int id;
     private String question;
