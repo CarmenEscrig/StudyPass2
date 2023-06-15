@@ -29,20 +29,6 @@ public class FlashCard {
         this.answer = answer;
     }
 
-    public FlashCard(String question, String answer, Subject subject) {
-        this.id = -1;
-        this.question = question;
-        this.answer = answer;
-        this.subject = subject;
-    }
-
-    public FlashCard(int id, String question, String answer, Subject subject) {
-        this.id = id;
-        this.question = question;
-        this.answer = answer;
-        this.subject = subject;
-    }
-
     public void transformToFile() throws IOException {
         File file = new File("src/main/resources/FlashCards/" + this.id + ".csv");
         file.createNewFile();

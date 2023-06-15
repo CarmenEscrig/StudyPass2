@@ -13,12 +13,6 @@ public class Progress {
         this.incorrect = 0;
     }
 
-    public Progress(int correct, int incorrect) {
-        this.id = -1;
-        this.correct = correct;
-        this.incorrect = incorrect;
-    }
-
     public Progress(int id, int correct, int incorrect) {
         this.id = id;
         this.correct = correct;
