@@ -25,8 +25,8 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
     }
 
     //Lista para gestionar las flashcards que se mostraran al estudiar
-    private static List<Integer> numbers = new ArrayList<>();
-    private static Random random = new Random();
+    private static List<FlashCard> flashCards = new ArrayList<>();
+    private static final Random random = new Random();
 
 
     //Transformar la flashcard de la base de datos en un objecto
@@ -49,7 +49,7 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
     public void save(FlashCard flashCard) throws SQLException, IOException {
         if (flashCard.getId() == -1){
             ResultSet rs;
-            PreparedStatement st = null;
+            PreparedStatement st;
             String query = "INSERT INTO flashcards (question, answer, subjectid) VALUES (?, ?, ?)";
             st = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, flashCard.getQuestion());
@@ -122,21 +122,19 @@ public class FlashRepositoryImpl implements IRepository<FlashCard> {
     //Gestionar las flashcards que aparecen al estudiar
 
     //Se resetea la lista de flashcards
-    public void resetNumbers() throws SQLException {
-        numbers.clear();
-        int max = findAll().size();
-        for (int i = 0; i < max; i++) {
-            numbers.add(i);
+    public void resetFlashcards(ArrayList<Subject> subjects) throws SQLException {
+        flashCards.clear();
+        for (Subject subject : subjects) {
+            flashCards.addAll(findBySubject(subject));
         }
     }
 
     //Se randomiza la flashcard a mostrar
     public FlashCard randomCard() throws SQLException {
 
+        int num = random.nextInt(flashCards.size());
 
-        int num = random.nextInt(findAll().size());
-
-        return findAll().get(num);
+        return flashCards.remove(num);
 
     }
 }

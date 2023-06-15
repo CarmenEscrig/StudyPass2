@@ -62,7 +62,7 @@ public class SolutionCard extends JFrame{
 
     public SolutionCard() throws SQLException {
 
-        flashRepository.resetNumbers();
+        flashRepository.resetFlashcards(Main.user.getSubjects());
         changeFlash();
 
 
