@@ -8,9 +8,19 @@ public class Subject {
     private ArrayList<User> users;
     private ArrayList<FlashCard> flashCards;
 
+    public Subject(String name) {
+        this.id = -1;
+        this.name = name;
+        this.users = new ArrayList<>();
+        this.flashCards = new ArrayList<>();
+    }
+
     public Subject(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Subject() {
     }
 
     public int getId() {

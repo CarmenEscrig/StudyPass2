@@ -29,12 +29,19 @@ public class FlashCard {
         this.answer = answer;
     }
 
+    public FlashCard(String answer, String question, Subject subject) {
+        this.id = -1;
+        this.question = question;
+        this.answer = answer;
+        this.subject = subject;
+    }
+
     public void transformToFile() throws IOException {
         File file = new File("src/main/resources/FlashCards/" + this.id + ".csv");
         file.createNewFile();
 
         PrintWriter printWriter = new PrintWriter(new FileWriter(file));
-        printWriter.print("ID@Question@Answer@SubjectID");
+        printWriter.println("ID@Question@Answer@SubjectID");
         printWriter.print(this.id + "@");
         printWriter.print(this.question + "@");
         printWriter.print(this.answer + "@");
