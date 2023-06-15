@@ -29,7 +29,7 @@ public class FlashCard {
         this.answer = answer;
     }
 
-    public FlashCard(String answer, String question, Subject subject) {
+    public FlashCard(String question, String answer, Subject subject) {
         this.id = -1;
         this.question = question;
         this.answer = answer;
