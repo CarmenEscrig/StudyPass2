@@ -131,7 +131,7 @@ public class Register extends JFrame{
 
     public void registUser() {
         String username = textNombre.getText();
-        String password = Arrays.toString(textRespuesta.getPassword());
+        String password = new String(textRespuesta.getPassword());
         String type = cmbLista.getSelectedItem().toString().toLowerCase();
         User user = new User(username, password, type);
 
