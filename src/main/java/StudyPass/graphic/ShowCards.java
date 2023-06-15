@@ -59,7 +59,6 @@ public class ShowCards extends JFrame {
 
     public void completeTable() throws SQLException {
 
-
         for (Subject s : Main.user.getSubjects()) {
             for (FlashCard f : new FlashRepositoryImpl().findBySubject(s)){
                 Object[] newRow = {f.getId(), f.getQuestion(), f.getAnswer(), f.getSubject().getName()};
