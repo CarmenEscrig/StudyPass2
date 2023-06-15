@@ -1,7 +1,7 @@
 package StudyPass.defcode;
 
 import java.util.ArrayList;
-
+//Esta es la asignatura
 public class Subject {
     private int id;
     private String name;
