@@ -50,7 +50,7 @@ public class Login extends JFrame {
 
     public void login() throws SQLException {
         String user = textNombre.getText();
-        String password = Arrays.toString(textRespuesta.getPassword());
+        String password = new String(textRespuesta.getPassword());
         UserRepositoryImpl userRepository = new UserRepositoryImpl();
         for (User u : userRepository.findAll()) {
             if (user.equals(u.getUsername()) && password.equals(u.getPassword())) {

@@ -88,19 +88,24 @@ public class SolutionCard extends JFrame{
 
         panel_1.add(Box.createVerticalStrut(30));
         panel_1.add(lblTitulo);
+        panel_1.setBackground(new Color(242,247,255));
 
         panel_2.add(lblEtiqueta);
         panel_2.add(cmbLista);
+        panel_2.setBackground(new Color(242,247,255));
 
         panel_3.add(jLabQuestion);
         panel_3.add(jLabQuestionText);
+        panel_3.setBackground(new Color(242,247,255));
 
         panel_4.add(jLabYourAnswer);
         textRespuesta.setPreferredSize(new Dimension(70,70));
         panel_4.add(textRespuesta);
+        panel_4.setBackground(new Color(242,247,255));
 
         panel_5.add(jLabAnswer);
         panel_5.add(jLabAnswerText);
+        panel_5.setBackground(new Color(242,247,255));
         jLabAnswer.setVisible(false);
         jLabAnswerText.setVisible(false);
 
@@ -109,6 +114,7 @@ public class SolutionCard extends JFrame{
         panel_6.add(btnIncorrect);
         btnCorrect.setVisible(false);
         btnIncorrect.setVisible(false);
+        panel_6.setBackground(new Color(242,247,255));
 
 
         btnShowAnswer.addActionListener((e) -> {
